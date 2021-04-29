@@ -19,4 +19,12 @@ class Role extends Model
         'libelle'
     ];
 
+    /**
+     * 1:n relation
+     */
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
+
 }

@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,7 +14,7 @@ class CreateRolesTable extends Migration
     public function up()
     {
         Schema::create('roles', function (Blueprint $table) {
-            $table->id('role_id');
+            $table->id();
             $table->string("libelle");
         });
     }
@@ -30,11 +29,5 @@ class CreateRolesTable extends Migration
         Schema::dropIfExists('roles');
     }
 
-    /**
-     * 1:n relation
-     */
-    public function users()
-    {
-        return $this->hasMany(User::class);
-    }
+
 }

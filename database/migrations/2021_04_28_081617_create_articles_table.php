@@ -1,7 +1,5 @@
 <?php
 
-use App\Models\Comment;
-use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -29,19 +27,6 @@ class CreateArticlesTable extends Migration
                 ->onUpdate('restrict');
             $table->timestamps();
         });
-    }
-
-    /**
-     * 1:n relation
-     */
-    public function comments()
-    {
-        return $this->hasMany(Comment::class);
-    }
-    
-    public function user()
-    {
-        return $this->belongsTo(User::class);
     }
 
     /**

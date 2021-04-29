@@ -16,8 +16,25 @@ class CreateContactsTable extends Migration
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->string('email');
+            $table->string('subject');
+            $table->string('content');
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
+            $table->foreign('subject_id')
+                ->references('id')
+                ->on('subjects')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
         });
     }
+
+
 
     /**
      * Reverse the migrations.

@@ -1,7 +1,5 @@
 <?php
 
-use App\Models\Comment;
-use App\Models\Role;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -31,21 +29,6 @@ class CreateUsersTable extends Migration
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
         });
-    }
-
-    public function articles()
-    {
-        return $this->hasMany(User::class);
-    }
-
-    public function comments()
-    {
-        return $this->hasMany(Comment::class);
-    }
-
-    public function role()
-    {
-        return $this->belongsTo(Role::class);
     }
 
     /**

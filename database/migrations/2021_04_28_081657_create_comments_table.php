@@ -1,7 +1,5 @@
 <?php
 
-use App\Models\Article;
-use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -30,22 +28,6 @@ class CreateCommentsTable extends Migration
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
         });
-    }
-
-    /**
-     * 1:n relation
-     */
-    public function article()
-    {
-        return $this->belongsTo(Article::class);
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function user()
-    {
-        return $this->belongsTo(User::class);
     }
 
     /**
