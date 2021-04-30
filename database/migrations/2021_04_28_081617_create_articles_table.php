@@ -20,11 +20,10 @@ class CreateArticlesTable extends Migration
             $table->string('slug');
             $table->string('title');
             $table->string('image');
+            $table->bigInteger('author_id')->unsigned()->index();
             $table->foreign('author_id')
                 ->references('id')
-                ->on('users')
-                ->onDelete('restrict')
-                ->onUpdate('restrict');
+                ->on('users');
             $table->timestamps();
         });
     }

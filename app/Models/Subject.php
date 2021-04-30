@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Subject extends Model
 {
     use HasFactory;
-
+    public $timestamps = false;
     public function contacts()
     {
         return $this->hasMany(Contact::class);

@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Article;
+use App\Models\Subject;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +16,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(10)->create();
+        $this->call([
+            SubjectTableSeeder::class,
+            RoleTableSeeder::class,
+            UsersTableSeeder::class,
+            ArticleTableSeeder::class,
+            CommentTableSeeder::class,
+            OrderTableSeeder::class,
+            ContactTableSeeder::class
+        ]);
     }
 }

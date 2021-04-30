@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class UsersTableSeeder extends Seeder
 {
@@ -14,8 +15,6 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        User::withoutEvents(function () {
-            User::factory()->create();
-        });
+        User::factory(10)->create();
     }
 }

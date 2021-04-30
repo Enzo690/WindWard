@@ -23,7 +23,7 @@ class RoleFactory extends Factory
     public function definition()
     {
         return [
-            'libelle' => "user",
+            'libelle' => "admin",
         ];
     }
 

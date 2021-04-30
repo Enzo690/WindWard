@@ -13,10 +13,12 @@ class CreateOrdersTable extends Migration
      */
     public function up()
     {
-        Schema::create('payments', function (Blueprint $table) {
+        Schema::disableForeignKeyConstraints();
+
+        Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name');
+            $table->string('firstname');
             $table->string('lastname');
             $table->string('adress');
             $table->string('city');
@@ -24,11 +26,10 @@ class CreateOrdersTable extends Migration
             $table->string('phone');
             $table->string('price');
             $table->string('quantity');
+            $table->bigInteger('user_id')->unsigned()->index();
             $table->foreign('user_id')
                 ->references('id')
-                ->on('users')
-                ->onDelete('restrict')
-                ->onUpdate('restrict');
+                ->on('users');
         });
     }
 

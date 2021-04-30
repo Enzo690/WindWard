@@ -13,21 +13,21 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('firstname');
             $table->string('lastname');
-            $table->string('phone');
+            $table->string('phone')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->bigInteger('role_id')->unsigned()->index();
             $table->foreign('role_id')
                 ->references('id')
-                ->on('roles')
-                ->onDelete('restrict')
-                ->onUpdate('restrict');
+                ->on('roles');
         });
     }
 
