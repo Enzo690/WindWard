@@ -167,22 +167,39 @@
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
-                    <li class="nav-item has-treeview menu-open">
-                        <a href="#" class="nav-link active">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
-                            <p>
-                                Dashboard
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
+                    <li class="nav-item">
+                        <a href="/admin" class="nav-link {{Route::current()->getName() === "admin.dashboard" ? "active" : ""}}">
+                            <i class="fas fa-tachometer-alt nav-icon"></i>
+                            <p>Accueil</p>
                         </a>
-                        <ul class="nav nav-treeview" style="display: block;">
-                            <li class="nav-item">
-                                <a href="./index.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Dashboard v1</p>
-                                </a>
-                            </li>
-                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/admin/users" class="nav-link {{Route::current()->getName() === "admin.users" ? "active" : ""}}">
+                            <i class="fas fa-user-alt nav-icon"></i>
+                            <p>Membres</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/admin/contact" class="nav-link {{Route::current()->getName() === "admin.contact" ? "active" : ""}}">
+                            <i class="far fa-address-book nav-icon"></i>
+                            <p>Contact</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/admin/orders" class="nav-link {{Route::current()->getName() === "admin.orders" ? "active" : ""}}">
+                            <i class="fas fa-money-check nav-icon"></i>
+                            <p>Commandes</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/admin/blog" class="nav-link {{Route::current()->getName() === "admin.blog" ? "active" : ""}}">
+                            <i class="fas fa-comments nav-icon"></i>
+                            <p>Blog</p>
+                        </a>
                     </li>
 
                 </ul>
@@ -195,6 +212,14 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <div class="content">
+            @if($errors->any())
+            <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h5><i class="icon fas fa-ban"></i> Alert!</h5>
+                {{$errors->first()}}
+            </div>
+            @endif
+
             @yield('content')
         </div>
     </div>

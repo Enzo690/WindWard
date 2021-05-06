@@ -32,7 +32,7 @@ class OrderFactory extends Factory
             'phone' => $this->faker->phoneNumber,
             'price' => $this->faker->numberBetween($quant*50),
             'quantity' => $quant,
-            'user_id' => $this->faker->numberBetween(1,10),
+            'user_id' => $this->faker->numberBetween(2,10),
         ];
     }
 }

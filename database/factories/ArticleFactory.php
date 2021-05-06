@@ -26,7 +26,7 @@ class ArticleFactory extends Factory
             'slug' => $this->faker->slug(),
             'title' => $this->faker->sentence(),
             'image' => $this->faker->imageUrl(),
-            'author_id' => 1,
+            'author_id' => 2,
         ];
     }
 }

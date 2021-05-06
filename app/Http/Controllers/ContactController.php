@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class ContactController extends Controller
 {
@@ -44,9 +45,13 @@ class ContactController extends Controller
      * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function show(Contact $contact)
+    public function show($id)
     {
-        //
+        $contact = Contact::find($id);
+        if ($contact === null){
+            return Redirect::back()->withErrors(['Aucune demande trouvé!', 'Aucune demande trouvé!']);
+        }
+        return view('admin.showContact')->with('contact', $contact);
     }
 
     /**
@@ -78,8 +83,11 @@ class ContactController extends Controller
      * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contact $contact)
+    public function destroy($id)
     {
-        //
+        $contact = Contact::find($id);
+        $contact->delete();
+
+        return redirect('admin/contact')->with('success', 'Contact supprimer !');
     }
 }
