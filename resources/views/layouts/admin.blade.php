@@ -15,6 +15,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/c1d0ab37d6.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -25,7 +26,7 @@
 </head>
 <body>
 
-<div class="wrapper">
+<aside class="wrapper">
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
         <!-- Left navbar links -->
@@ -207,6 +208,7 @@
             <!-- /.sidebar-menu -->
         </div>
         <!-- /.sidebar -->
+
     </aside>
 
     <!-- Content Wrapper. Contains page content -->
@@ -222,21 +224,30 @@
 
             @yield('content')
         </div>
+
     </div>
+    <footer class="main-footer">
+        <strong>Copyright © 2014-2019 WindWard.</strong>
+        All rights reserved.
+        <div class="float-right d-none d-sm-inline-block">
+            <b>Version</b> 1.0.0
+        </div>
+    </footer>
+</aside>
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
         <!-- Control sidebar content goes here -->
-    <!-- /.control-sidebar -->
+        <!-- /.control-sidebar -->
+        <div id="sidebar-overlay"></div>
+    </aside>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ), {
 
-    <!-- Main Footer -->
-    <footer class="main-footer">
-        <strong>Copyright © 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
-        All rights reserved.
-        <div class="float-right d-none d-sm-inline-block">
-            <b>Version</b> 3.0.0
-        </div>
-    </footer>
-    <div id="sidebar-overlay"></div>
-</div>
+        } )
+        .catch( error => {
+            console.log( error );
+        } );
+</script>
 </body>

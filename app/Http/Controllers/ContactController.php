@@ -51,7 +51,7 @@ class ContactController extends Controller
         if ($contact === null){
             return Redirect::back()->withErrors(['Aucune demande trouvé!', 'Aucune demande trouvé!']);
         }
-        return view('admin.showContact')->with('contact', $contact);
+        return view('admin.contact.show')->with('contact', $contact);
     }
 
     /**
@@ -87,7 +87,6 @@ class ContactController extends Controller
     {
         $contact = Contact::find($id);
         $contact->delete();
-
-        return redirect('admin/contact')->with('success', 'Contact supprimer !');
+        return redirect('admin/contact/')->with('success', 'Contact supprimer !');
     }
 }

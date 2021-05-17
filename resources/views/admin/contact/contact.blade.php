@@ -1,5 +1,14 @@
 @extends('layouts.admin')
 @section('content')
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Demandes de contact</h1>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
     <div class="card">
         <div class="card-header border-0">
             <h3 class="card-title">Contact</h3>
@@ -31,9 +40,11 @@
                         <td>
                             {{$contact->email}}
                         </td>
+
                         <td>
                             {{$contact->subject()->first()->subject}}
                         </td>
+
                         <td>
                             @if($contact->status === 1)
                                <span class="badge-success">Ouvert</span>
@@ -52,6 +63,9 @@
                 </tbody>
             </table>
         </div>
+        <footer class="card-footer is-centered">
+            {{ $contacts->links() }}
+        </footer>
     </div>
 
 

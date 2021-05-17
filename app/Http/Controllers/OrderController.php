@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Payment;
+use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class OrderController extends Controller
 {
@@ -44,9 +45,13 @@ class OrderController extends Controller
      * @param  \App\Models\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function show(Payment $payment)
+    public function show($id)
     {
-        //
+        $order = Order::find($id);
+        if ($order === null){
+            return Redirect::back()->withErrors(['Aucune commande trouvé!', 'Aucune commande trouvé!']);
+        }
+        return view('admin.order.show')->with('order', $order);
     }
 
     /**

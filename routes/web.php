@@ -27,6 +27,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// admin route
 Route::prefix('admin')->middleware(['auth'])->group(function () {
 
     // base route
@@ -38,15 +39,18 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 
     // show view
     Route::get('/contact/{id}',[App\Http\Controllers\ContactController::class, 'show'])->name('contact.show');
-    Route::get('/article/{id}',[App\Http\Controllers\ArticleController::class, 'show'])->name('article.show');
+    Route::get('/blog/{slug}',[App\Http\Controllers\ArticleController::class, 'show'])->name('article.show');
     Route::get('/order/{id}',[App\Http\Controllers\OrderController::class, 'show'])->name('order.show');
     Route::get('/users/{id}',[App\Http\Controllers\UserController::class, 'show'])->name('user.show');
 
     // delete
     Route::delete('/contact/delete/{id}',[App\Http\Controllers\ContactController::class, 'destroy'])->name('contact.destroy');
-    Route::delete('/article/delete/{id}',[App\Http\Controllers\ArticleController::class, 'destroy'])->name('contact.destroy');
+    Route::delete('/article/delete/{id}',[App\Http\Controllers\ArticleController::class, 'destroy'])->name('article.destroy');
     Route::delete('/order/delete/{id}',[App\Http\Controllers\OrderController::class, 'destroy'])->name('order.destroy');
     Route::delete('/users/delete/{id}',[App\Http\Controllers\UserController::class, 'destroy'])->name('user.destroy');
+
+    // create
+    Route::get('/blog/create',[App\Http\Controllers\ArticleController::class, 'create'])->name('admin.blog.create');
 
     // post
 
