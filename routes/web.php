@@ -39,7 +39,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 
     // show view
     Route::get('/contact/{id}',[App\Http\Controllers\ContactController::class, 'show'])->name('contact.show');
-    Route::get('/blog/{slug}',[App\Http\Controllers\ArticleController::class, 'show'])->name('article.show');
+    Route::get('/blog/show/{slug}',[App\Http\Controllers\ArticleController::class, 'show'])->name('article.show');
     Route::get('/order/{id}',[App\Http\Controllers\OrderController::class, 'show'])->name('order.show');
     Route::get('/users/{id}',[App\Http\Controllers\UserController::class, 'show'])->name('user.show');
 

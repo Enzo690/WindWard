@@ -11,7 +11,7 @@
     </div>
     <div class="card">
         <div class="card-header border-0">
-            <a href="/admin/blog/create" class="btn btn-outline-primary">Nouveau Article +</a>
+            <a href="{{route('admin.blog.create')}}" class="btn btn-outline-primary">Nouveau Article +</a>
         </div>
         <div class="card-body p-0">
             <table class="table table-striped table-valign-middle">
@@ -37,7 +37,7 @@
                         </td>
 
                         <td>
-                            <a href="/admin/blog/{{$article->slug}}"><i class="fas fa-search"></i></a>
+                            <a href="/admin/blog/show/{{$article->slug}}"><i class="fas fa-search"></i></a>
                         </td>
                     </tr>
                 @endforeach
@@ -49,6 +49,8 @@
             {{ $articles->links() }}
         </footer>
     </div>
+
+    
 
 
 

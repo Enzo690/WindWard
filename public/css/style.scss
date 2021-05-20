@@ -462,8 +462,12 @@ footer {
             }
         }
     }
+
     #header-login {
         top: 75px;
         right: 25px !important;
     }
+}
+.ck-editor__editable {
+    min-height: 200px;
 }

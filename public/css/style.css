@@ -558,4 +558,8 @@ footer #footer-inside #footer-select:hover::after {
     right: 25px !important;
   }
 }
+
+.ck-editor__editable {
+  min-height: 200px;
+}
 /*# sourceMappingURL=style.css.map */

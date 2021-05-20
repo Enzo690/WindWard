@@ -11,18 +11,19 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/c1d0ab37d6.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/c1d0ab37d6.js" crossorigin="anonymous"></script>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+
 </head>
 <body>
 
@@ -241,13 +242,15 @@
         <!-- /.control-sidebar -->
         <div id="sidebar-overlay"></div>
     </aside>
-<script>
-    ClassicEditor
-        .create( document.querySelector( '#editor' ), {
 
-        } )
-        .catch( error => {
-            console.log( error );
-        } );
+<script>
+    $(function(){
+        $('.editor').each(function(e){
+            CKEDITOR.replace( this.name, {
+                enterMode: CKEDITOR.ENTER_BR
+            });
+        });
+    });
 </script>
+
 </body>

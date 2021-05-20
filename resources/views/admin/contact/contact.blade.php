@@ -9,65 +9,99 @@
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>
-    <div class="card">
-        <div class="card-header border-0">
-            <h3 class="card-title">Contact</h3>
+
+    <div class="col-md-12">
+        <div class="card card-light card-outline">
+            <div class="card-header">
+                <h3 class="card-title">Contact</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body p-0">
+                <div class="mailbox-controls">
+                    <!-- Check all button -->
+                    <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="far fa-square"></i>
+                    </button>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
+                    </div>
+                    <!-- /.btn-group -->
+                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
+                    <div class="float-right">
+                        <div class="btn-group">
+                            {{ $contacts->links() }}
+                        </div>
+                        <!-- /.btn-group -->
+                    </div>
+                    <!-- /.float-right -->
+                </div>
+                <div class="table-responsive mailbox-messages">
+                    <table class="table table-hover table-striped">
+                        <tbody>
+                        @foreach ($contacts as $contact)
+
+                            <tr>
+                            <td>
+                                <div class="icheck-primary">
+                                    <input type="checkbox" value="" id="check1">
+                                    <label for="check1"></label>
+                                </div>
+                            </td>
+                            <td>
+                                {{$contact->id}}
+                            </td>
+                            <td>
+                                {{$contact->firstname}}
+                            </td>
+                            <td>
+                                {{$contact->lastname}}
+                            </td>
+
+                            <td>
+                                {{$contact->email}}
+                            </td>
+
+                            <td>
+                                {{$contact->subject()->first()->subject}}
+                            </td>
+
+
+                            <td>
+                                <a href="/admin/contact/{{$contact->id}}"><i class="fas fa-search"></i></a>
+                            </td>
+                        </tr>
+                        @endforeach
+
+
+                        </tbody>
+                    </table>
+                    <!-- /.table -->
+                </div>
+                <!-- /.mail-box-messages -->
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer p-0">
+                <div class="mailbox-controls">
+                    <!-- Check all button -->
+                    <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="far fa-square"></i>
+                    </button>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
+                    </div>
+                    <!-- /.btn-group -->
+                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
+                    <div class="float-right">
+                        <div class="btn-group">
+                            {{ $contacts->links() }}
+
+                        </div>
+                        <!-- /.btn-group -->
+                    </div>
+                    <!-- /.float-right -->
+                </div>
+            </div>
         </div>
-        <div class="card-body p-0">
-            <table class="table table-striped table-valign-middle">
-                <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Prénom</th>
-                    <th>Nom</th>
-                    <th>Email</th>
-                    <th>Sujet</th>
-                    <th>Status</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach ($contacts as $contact)
-                    <tr>
-                        <td>
-                            {{$contact->id}}
-                        </td>
-                        <td>
-                            {{$contact->firstname}}
-                        </td>
-                        <td>
-                            {{$contact->lastname}}
-                        </td>
-                        <td>
-                            {{$contact->email}}
-                        </td>
-
-                        <td>
-                            {{$contact->subject()->first()->subject}}
-                        </td>
-
-                        <td>
-                            @if($contact->status === 1)
-                               <span class="badge-success">Ouvert</span>
-
-                            @else
-                                <span class="badge badge-danger">Non ouvert</span>
-
-                            @endif
-                        </td>
-                        <td>
-                            <a href="/admin/contact/{{$contact->id}}"><i class="fas fa-search"></i></a>
-                        </td>
-                    </tr>
-                @endforeach
-
-                </tbody>
-            </table>
-        </div>
-        <footer class="card-footer is-centered">
-            {{ $contacts->links() }}
-        </footer>
+        <!-- /.card -->
     </div>
-
 
 
 @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class ArticleController extends Controller
 {
@@ -44,9 +45,13 @@ class ArticleController extends Controller
      * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function show(Article $article)
+    public function show($slug)
     {
-        //
+        $article = Article::where('slug',$slug)->first();
+        if ($article === null){
+            return Redirect::back()->withErrors(['Aucun article trouvé!', 'Aucun article trouvé!']);
+        }
+        return view('admin.blog.show')->with('article', $article);
     }
 
     /**
