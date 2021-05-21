@@ -56,7 +56,7 @@ class ArticleController extends Controller
             'title' => request('title'),
             'content' => request('content'),
             'slug' => Str::slug(request('title'), '-'),
-            'image' => $this->articleRepository->uploadImage($request->file('file'),$request),
+            'image' => $request->hasFile('image') ? $this->articleRepository->uploadImage($request->file('image'),$request) : null,
             'author_id' => $id
         ]);
         return redirect()->route('admin.blog')->with('info', 'L\'article a bien été créé');

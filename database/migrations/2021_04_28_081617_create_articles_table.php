@@ -19,7 +19,7 @@ class CreateArticlesTable extends Migration
             $table->string('content');
             $table->string('slug');
             $table->string('title');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->bigInteger('author_id')->unsigned()->index();
             $table->foreign('author_id')
                 ->references('id')

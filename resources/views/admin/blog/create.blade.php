@@ -22,8 +22,12 @@
         <div class="input-group" style="margin-bottom: 2%">
             <input id="title-article" class="form-control" type="text" placeholder="Titre de l'article" name="title">
         </div>
+
+        <div class="input-group" style="margin-bottom: 2%">
+            <input type="file" name="image" id="image">
+        </div>
+
         <label for="editor">Editeur de texte</label>
-        <input type="file" name="file" id="file">
 
         <textarea id="editor" class="editor form-control" name="content"></textarea>
 
