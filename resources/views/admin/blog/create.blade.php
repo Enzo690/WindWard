@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 @section('content')
+
     <div class="content-header">
             <div class="row mb-2">
                 <div >
@@ -9,21 +10,22 @@
     </div>
 
 
-    <form method="post" action="" enctype="multipart/form-data">
+    <form method="post" action="{{ route('admin.blog.store') }}" enctype="multipart/form-data">
+        @csrf
 
         <div class=" d-flex justify-content-start" >
             <button  type="submit" class="btn btn-outline-primary">Poster</button>
         </div>
 
-        @csrf
         <label class="col-form-label" for="title-article">Titre de l'article</label>
 
         <div class="input-group" style="margin-bottom: 2%">
             <input id="title-article" class="form-control" type="text" placeholder="Titre de l'article" name="title">
         </div>
         <label for="editor">Editeur de texte</label>
+        <input type="file" name="file" id="file">
 
-        <textarea id="editor" class="editor form-control" name="titre-editor"></textarea>
+        <textarea id="editor" class="editor form-control" name="content"></textarea>
 
             <div class="input-group" style="margin-bottom: 1%; margin-top: 1%">
                 <button type="submit" class="btn btn-outline-primary">Poster</button>

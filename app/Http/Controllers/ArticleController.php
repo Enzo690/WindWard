@@ -2,12 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Repositories\ArticleRepository;
+use App\Http\Requests\ArticleRequest;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
+
+    protected $articleRepository;
+
+    public function __construct(ArticleRepository $articleRepository)
+    {
+        $this->articleRepository = $articleRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -34,9 +46,21 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArticleRequest $request)
     {
-        //
+
+        $id = Auth::id();
+
+        $article = Article::create([
+
+            'title' => request('title'),
+            'content' => request('content'),
+            'slug' => Str::slug(request('title'), '-'),
+            'image' => $this->articleRepository->uploadImage($request->file('file'),$request),
+            'author_id' => $id
+        ]);
+        return redirect()->route('admin.blog')->with('info', 'L\'article a bien été créé');
+
     }
 
     /**
@@ -47,7 +71,7 @@ class ArticleController extends Controller
      */
     public function show($slug)
     {
-        $article = Article::where('slug',$slug)->first();
+        $article = $this->articleRepository->getArticleBySlug($slug);
         if ($article === null){
             return Redirect::back()->withErrors(['Aucun article trouvé!', 'Aucun article trouvé!']);
         }

@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,38 +26,39 @@ require __DIR__.'/auth.php';
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // admin route
 Route::prefix('admin')->middleware(['auth'])->group(function () {
 
     // base route
-    Route::get('/',[App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard');
-    Route::get('/blog',[App\Http\Controllers\AdminController::class, 'blog'])->name('admin.blog');
-    Route::get('/users',[App\Http\Controllers\AdminController::class, 'users'])->name('admin.users');
-    Route::get('/orders',[App\Http\Controllers\AdminController::class, 'orders'])->name('admin.orders');
-    Route::get('/contact',[App\Http\Controllers\AdminController::class, 'contact'])->name('admin.contact');
+    Route::get('/',[AdminController::class, 'index'])->name('admin.dashboard');
+    Route::get('/blog',[AdminController::class, 'blog'])->name('admin.blog');
+    Route::get('/users',[AdminController::class, 'users'])->name('admin.users');
+    Route::get('/orders',[AdminController::class, 'orders'])->name('admin.orders');
+    Route::get('/contact',[AdminController::class, 'contact'])->name('admin.contact');
 
     // show view
-    Route::get('/contact/{id}',[App\Http\Controllers\ContactController::class, 'show'])->name('contact.show');
-    Route::get('/blog/show/{slug}',[App\Http\Controllers\ArticleController::class, 'show'])->name('article.show');
-    Route::get('/order/{id}',[App\Http\Controllers\OrderController::class, 'show'])->name('order.show');
-    Route::get('/users/{id}',[App\Http\Controllers\UserController::class, 'show'])->name('user.show');
+    Route::get('/contact/{id}',[ContactController::class, 'show'])->name('contact.show');
+    Route::get('/blog/show/{slug}',[ArticleController::class, 'show'])->name('article.show');
+    Route::get('/order/{id}',[OrderController::class, 'show'])->name('order.show');
+    Route::get('/users/{id}',[UserController::class, 'show'])->name('user.show');
 
     // delete
-    Route::delete('/contact/delete/{id}',[App\Http\Controllers\ContactController::class, 'destroy'])->name('contact.destroy');
-    Route::delete('/article/delete/{id}',[App\Http\Controllers\ArticleController::class, 'destroy'])->name('article.destroy');
-    Route::delete('/order/delete/{id}',[App\Http\Controllers\OrderController::class, 'destroy'])->name('order.destroy');
-    Route::delete('/users/delete/{id}',[App\Http\Controllers\UserController::class, 'destroy'])->name('user.destroy');
+    Route::delete('/contact/delete/{id}',[ContactController::class, 'destroy'])->name('contact.destroy');
+    Route::delete('/article/delete/{id}',[ArticleController::class, 'destroy'])->name('article.destroy');
+    Route::delete('/order/delete/{id}',[OrderController::class, 'destroy'])->name('order.destroy');
+    Route::delete('/users/delete/{id}',[UserController::class, 'destroy'])->name('user.destroy');
 
     // create
-    Route::get('/blog/create',[App\Http\Controllers\ArticleController::class, 'create'])->name('admin.blog.create');
+    Route::get('/blog/create',[ArticleController::class, 'create'])->name('admin.blog.create');
 
     // post
+    Route::post('/blog/store', [ArticleController::class, 'store'])->name('admin.blog.store');
 
     // update
 

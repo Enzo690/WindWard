@@ -9,6 +9,14 @@ class Article extends Model
 {
     use HasFactory;
 
+    protected $fillable =   [
+        "title",
+        "content",
+        "slug",
+        "image",
+        'author_id'
+    ];
+
     /**
      * 1:n relation
      */
