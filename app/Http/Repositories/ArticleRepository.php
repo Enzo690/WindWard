@@ -27,10 +27,10 @@ class ArticleRepository
                 'content-type' => 'application/x-www-form-urlencoded',
             ],
             'form_params' => [
-                'image' => base64_encode(file_get_contents($request->file('file')->path($file_path)))
+                'image' => base64_encode(file_get_contents($request->file('image')->path($file_path)))
             ],
         ]);
-        return $data['file'] = data_get(response()->json(json_decode(($response->getBody()->getContents())))->getData(), 'data.link');
+        return  $data['file'] = data_get(response()->json(json_decode(($response->getBody()->getContents())))->getData(), 'data.link');
     }
 
     public function search($n, $search)

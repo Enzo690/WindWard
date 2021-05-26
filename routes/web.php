@@ -61,5 +61,6 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::post('/blog/store', [ArticleController::class, 'store'])->name('admin.blog.store');
 
     // update
+    Route::put('/blog/update/{id}', [ArticleController::class, 'update'])->name('admin.blog.update');
 
 });

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Repositories\ArticleRepository;
 use App\Http\Requests\ArticleRequest;
 use App\Models\Article;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
@@ -50,7 +49,6 @@ class ArticleController extends Controller
     {
 
         $id = Auth::id();
-
         $article = Article::create([
 
             'title' => request('title'),
@@ -59,13 +57,14 @@ class ArticleController extends Controller
             'image' => $request->hasFile('image') ? $this->articleRepository->uploadImage($request->file('image'),$request) : null,
             'author_id' => $id
         ]);
+
         return redirect()->route('admin.blog')->with('info', 'L\'article a bien été créé');
 
     }
 
     /**
      * Display the specified resource.
-     *
+     * For edit also
      * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
@@ -79,26 +78,20 @@ class ArticleController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Article  $article
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Article $article)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Article $article)
+    public function update(ArticleRequest $request, $id)
     {
-        //
+       $article = Article::firstWhere('id', $id);
+       $article->content = $request->content;
+       $article->title = $request->title;
+       $article->image = $this->articleRepository->uploadImage($request->image, $request);
+       $article->update();
+        return redirect()->back();
     }
 
     /**

@@ -8,7 +8,7 @@ var ham = document.querySelector(".navbar-burger")
 var xIcon = document.querySelector(".navbar-close")
 var menuIcon = document.querySelector(".navbar-icon")
 
-ham.addEventListener("click", toggleMenu)
+//ham.addEventListener("click", toggleMenu)
 
 function toggleMenu() {
     if (menu.classList.contains("navbar-show")) {
@@ -31,3 +31,8 @@ menuLinks.forEach(
         menuLink.addEventListener("click", toggleMenu)
     }
 )
+
+$("#article-image").click(function() {
+    $("input[id='my_file']").click();
+});
+

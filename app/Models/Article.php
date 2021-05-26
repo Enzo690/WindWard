@@ -20,10 +20,6 @@ class Article extends Model
     /**
      * 1:n relation
      */
-    public function comments()
-    {
-        return $this->hasMany(Comment::class);
-    }
 
     public function author()
     {
