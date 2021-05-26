@@ -49,7 +49,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/users/{id}',[UserController::class, 'show'])->name('user.show');
 
     // delete
-    Route::delete('/contact/delete/{id}',[ContactController::class, 'destroy'])->name('contact.destroy');
+    Route::delete('/contact/delete',[ContactController::class, 'destroy'])->name('contact.destroy');
     Route::delete('/article/delete/{id}',[ArticleController::class, 'destroy'])->name('article.destroy');
     Route::delete('/order/delete/{id}',[OrderController::class, 'destroy'])->name('order.destroy');
     Route::delete('/users/delete/{id}',[UserController::class, 'destroy'])->name('user.destroy');

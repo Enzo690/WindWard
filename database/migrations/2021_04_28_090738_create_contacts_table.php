@@ -30,7 +30,7 @@ class CreateContactsTable extends Migration
             $table->foreign('subject_id')
                 ->references('id')
                 ->on('subjects');
-            $table->integer('status');
+            $table->softDeletes();
         });
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -83,10 +84,15 @@ class ContactController extends Controller
      * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $contact = Contact::find($id);
-        $contact->delete();
+
+        $validated = $request->validate([
+            'contacts' => 'required|array|max:255',
+        ]);
+
+        Contact::whereIn('id', $request->contacts)->delete();
+
         return redirect('admin/contact/')->with('success', 'Contact supprimer !');
     }
 }

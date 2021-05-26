@@ -25,6 +25,7 @@ class CreateArticlesTable extends Migration
                 ->references('id')
                 ->on('users');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

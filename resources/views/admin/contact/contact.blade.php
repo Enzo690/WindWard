@@ -16,13 +16,17 @@
                 <h3 class="card-title">Contact</h3>
             </div>
             <!-- /.card-header -->
+            <form method="post" action="{{ route("contact.destroy") }}" >
+                @csrf
+                <input name="_method" type="hidden" value="DELETE">
+
             <div class="card-body p-0">
                 <div class="mailbox-controls">
                     <!-- Check all button -->
                     <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="far fa-square"></i>
                     </button>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
+                        <button type="submit" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
                     </div>
                     <!-- /.btn-group -->
                     <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
@@ -35,6 +39,7 @@
                     <!-- /.float-right -->
                 </div>
                 <div class="table-responsive mailbox-messages">
+
                     <table class="table table-hover table-striped">
                         <tbody>
                         @foreach ($contacts as $contact)
@@ -42,12 +47,8 @@
                             <tr>
                             <td>
                                 <div class="icheck-primary">
-                                    <input type="checkbox" value="" id="check1">
-                                    <label for="check1"></label>
+                                    <input name="contacts[]" type="checkbox" value="{{$contact->id}}" id="check1">
                                 </div>
-                            </td>
-                            <td>
-                                {{$contact->id}}
                             </td>
                             <td>
                                 {{$contact->firstname}}
@@ -74,10 +75,12 @@
 
                         </tbody>
                     </table>
+
                     <!-- /.table -->
                 </div>
                 <!-- /.mail-box-messages -->
             </div>
+            </form>
             <!-- /.card-body -->
             <div class="card-footer p-0">
                 <div class="mailbox-controls">
@@ -85,7 +88,7 @@
                     <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="far fa-square"></i>
                     </button>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
+                        <button type="submit" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
                     </div>
                     <!-- /.btn-group -->
                     <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>

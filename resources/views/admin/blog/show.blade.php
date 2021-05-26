@@ -8,9 +8,10 @@
         </div><!-- /.row -->
     </div>
 
-
     <form method="post" action="{{ route("admin.blog.update", ["id" => $article->id]) }}" enctype="multipart/form-data">
+
         @csrf
+
         <input name="_method" type="hidden" value="PUT">
         <div class=" d-flex justify-content-start" >
             <button  type="submit" class="btn btn-outline-primary">Editer</button>
