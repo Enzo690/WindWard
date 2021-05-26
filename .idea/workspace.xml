@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="54438cc9-4723-47b1-a724-7845f46c28c0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ContactFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ContactFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_28_081617_create_articles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_28_081617_create_articles_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_28_090738_create_contacts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_28_090738_create_contacts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/blog/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/blog/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/contact/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/contact/contact.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="54438cc9-4723-47b1-a724-7845f46c28c0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -178,7 +165,7 @@
       <updated>1621926978272</updated>
       <workItem from="1621926985984" duration="354000" />
       <workItem from="1621927423066" duration="1814000" />
-      <workItem from="1622028912521" duration="8256000" />
+      <workItem from="1622028912521" duration="8639000" />
     </task>
     <servers />
   </component>
