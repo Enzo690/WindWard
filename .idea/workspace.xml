@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="54438cc9-4723-47b1-a724-7845f46c28c0" name="Default Changelist" comment="" />
+    <list default="true" id="54438cc9-4723-47b1-a724-7845f46c28c0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_28_081617_create_articles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_28_081617_create_articles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/user/users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/users.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -140,7 +144,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images/elements" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -165,7 +169,8 @@
       <updated>1621926978272</updated>
       <workItem from="1621926985984" duration="354000" />
       <workItem from="1621927423066" duration="1814000" />
-      <workItem from="1622028912521" duration="8639000" />
+      <workItem from="1622028912521" duration="10101000" />
+      <workItem from="1622727717366" duration="1373000" />
     </task>
     <servers />
   </component>
@@ -182,5 +187,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

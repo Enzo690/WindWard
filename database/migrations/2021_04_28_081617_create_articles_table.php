@@ -16,7 +16,7 @@ class CreateArticlesTable extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->string('content');
+            $table->longText('content');
             $table->string('slug');
             $table->string('title');
             $table->string('image')->nullable();
