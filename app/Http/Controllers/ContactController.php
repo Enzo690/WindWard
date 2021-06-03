@@ -16,7 +16,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $contacts = Contact::paginate(10);
+        return view('admin.contact.contact')->with('contacts', $contacts);
     }
 
     /**
@@ -86,13 +87,8 @@ class ContactController extends Controller
      */
     public function destroy(Request $request)
     {
-
-        $validated = $request->validate([
-            'contacts' => 'required|array|max:255',
-        ]);
-
         Contact::whereIn('id', $request->contacts)->delete();
 
-        return redirect('admin/contact/')->with('success', 'Contact supprimer !');
+        return redirect('admin/contact/')->with('message', 'Contact supprimer !');
     }
 }

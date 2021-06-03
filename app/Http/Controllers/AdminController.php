@@ -16,27 +16,4 @@ class AdminController extends Controller
         return view('admin.index');
     }
 
-    public function contact()
-    {
-        $contacts = Contact::paginate(10);
-        return view('admin.contact.contact')->with('contacts', $contacts);
-    }
-
-    public function users()
-    {
-        return view('admin.user.users');
-    }
-
-    public function blog()
-    {
-        $articles = Article::paginate(10);
-        return view('admin.blog.blog')->with('articles', $articles);
-    }
-
-    public function orders()
-    {
-        $orders = Order::paginate(10);
-        return view('admin.order.orders')->with('orders', $orders);
-    }
-
 }

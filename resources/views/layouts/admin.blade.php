@@ -216,19 +216,25 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <div class="content">
+        <div class="content col-lg-12">
+            @if(session()->has('message'))
+                <div class="alert alert-success">
+                    {{ session()->get('message') }}
+                </div>
+            @endif
+
             @if($errors->any())
-            <div class="alert alert-danger alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <h5><i class="icon fas fa-ban"></i> Alert!</h5>
-                {{$errors->first()}}
-            </div>
+                <div class="alert alert-danger alert-dismissible col-lg-12">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fas fa-ban"></i> Alert!</h5>
+                    {{$errors->first()}}
+                </div>
             @endif
 
             @yield('content')
         </div>
-
     </div>
+
     <footer class="main-footer">
         <strong>Copyright © 2014-2019 WindWard.</strong>
         All rights reserved.

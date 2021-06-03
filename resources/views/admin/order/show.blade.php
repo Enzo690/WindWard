@@ -27,17 +27,5 @@
             <!-- /.mailbox-read-message -->
         </div>
         <!-- /.card-body -->
-
-        <!-- /.card-footer -->
-        <div class="card-footer">
-
-            <form action="{{ route('order.destroy', $order->id)}}" method="post">
-                @method('DELETE')
-                @csrf
-                <input class="btn btn-danger" type="submit" value="Delete" />
-            </form>
-
-        </div>
-        <!-- /.card-footer -->
     </div>
 @endsection

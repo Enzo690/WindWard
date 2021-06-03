@@ -15,7 +15,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = Order::paginate(10);
+        return view('admin.order.orders')->with('orders', $orders);
     }
 
     /**
@@ -42,7 +43,7 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Payment  $payment
+     * @param  \App\Models\Order  $Order
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -57,10 +58,10 @@ class OrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Payment  $payment
+     * @param  \App\Models\Order  $Order
      * @return \Illuminate\Http\Response
      */
-    public function edit(Payment $payment)
+    public function edit(Order $Order)
     {
         //
     }
@@ -69,10 +70,10 @@ class OrderController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Payment  $payment
+     * @param  \App\Models\Order  $Order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Payment $payment)
+    public function update(Request $request, Order $Order)
     {
         //
     }
@@ -80,11 +81,13 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Payment  $payment
+     * @param  \App\Models\Order  $Order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Payment $payment)
+    public function destroy(Request $request)
     {
-        //
+        Order::whereIn('id', $request->orders)->delete();
+
+        return redirect('admin/orders/')->with('message', 'Commandes supprimer !');
     }
 }

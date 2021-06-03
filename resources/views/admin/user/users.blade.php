@@ -13,26 +13,18 @@
     <div class="col-md-12">
         <div class="card card-light card-outline">
             <div class="card-header">
-                <h3 class="card-title">Contact</h3>
+                <h3 class="card-title">Utilisateurs</h3>
             </div>
             <!-- /.card-header -->
-            <form method="post" action="{{ route("contact.destroy") }}" >
+            <form method="post" action="{{ route("user.destroy") }}" >
                 @csrf
                 <input name="_method" type="hidden" value="DELETE">
 
                 <div class="card-body p-0">
                     <div class="mailbox-controls">
-                        <!-- Check all button -->
-                        <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="far fa-square"></i>
-                        </button>
-                        <div class="btn-group">
-                            <button type="submit" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
-                        </div>
-                        <!-- /.btn-group -->
-                        <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
                         <div class="float-right">
                             <div class="btn-group">
-                                {{ $contacts->links() }}
+                                {{ $users->links() }}
                             </div>
                             <!-- /.btn-group -->
                         </div>
@@ -42,32 +34,22 @@
 
                         <table class="table table-hover table-striped">
                             <tbody>
-                            @foreach ($contacts as $contact)
+                            @foreach ($users as $user)
 
                                 <tr>
                                     <td>
-                                        <div class="icheck-primary">
-                                            <input name="contacts[]" type="checkbox" value="{{$contact->id}}" id="check1">
-                                        </div>
+                                        {{$user->firstname}}
                                     </td>
                                     <td>
-                                        {{$contact->firstname}}
-                                    </td>
-                                    <td>
-                                        {{$contact->lastname}}
+                                        {{$user->lastname}}
                                     </td>
 
                                     <td>
-                                        {{$contact->email}}
+                                        {{$user->email}}
                                     </td>
 
                                     <td>
-                                        {{$contact->subject()->first()->subject}}
-                                    </td>
-
-
-                                    <td>
-                                        <a href="/admin/contact/{{$contact->id}}"><i class="fas fa-search"></i></a>
+                                        <a href="/admin/contact/{{$user->id}}"><i class="fas fa-search"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -84,18 +66,9 @@
             <!-- /.card-body -->
             <div class="card-footer p-0">
                 <div class="mailbox-controls">
-                    <!-- Check all button -->
-                    <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="far fa-square"></i>
-                    </button>
-                    <div class="btn-group">
-                        <button type="submit" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
-                    </div>
-                    <!-- /.btn-group -->
-                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
                     <div class="float-right">
                         <div class="btn-group">
-                            {{ $contacts->links() }}
-
+                            {{ $users->links() }}
                         </div>
                         <!-- /.btn-group -->
                     </div>

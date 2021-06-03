@@ -37,10 +37,10 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 
     // base route
     Route::get('/',[AdminController::class, 'index'])->name('admin.dashboard');
-    Route::get('/blog',[AdminController::class, 'blog'])->name('admin.blog');
-    Route::get('/users',[AdminController::class, 'users'])->name('admin.users');
-    Route::get('/orders',[AdminController::class, 'orders'])->name('admin.orders');
-    Route::get('/contact',[AdminController::class, 'contact'])->name('admin.contact');
+    Route::get('/blog',[ArticleController::class, 'index'])->name('admin.blog');
+    Route::get('/users',[UserController::class, 'index'])->name('admin.users');
+    Route::get('/orders',[OrderController::class, 'index'])->name('admin.orders');
+    Route::get('/contact',[ContactController::class, 'index'])->name('admin.contact');
 
     // show view
     Route::get('/contact/{id}',[ContactController::class, 'show'])->name('contact.show');
@@ -50,9 +50,9 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 
     // delete
     Route::delete('/contact/delete',[ContactController::class, 'destroy'])->name('contact.destroy');
-    Route::delete('/article/delete/{id}',[ArticleController::class, 'destroy'])->name('article.destroy');
-    Route::delete('/order/delete/{id}',[OrderController::class, 'destroy'])->name('order.destroy');
-    Route::delete('/users/delete/{id}',[UserController::class, 'destroy'])->name('user.destroy');
+    Route::delete('/article/delete',[ArticleController::class, 'destroy'])->name('article.destroy');
+    Route::delete('/order/delete',[OrderController::class, 'destroy'])->name('order.destroy');
+    Route::delete('/users/delete',[UserController::class, 'destroy'])->name('user.destroy');
 
     // create
     Route::get('/blog/create',[ArticleController::class, 'create'])->name('admin.blog.create');

@@ -80,7 +80,7 @@
                 </div>
                 <!-- /.mail-box-messages -->
             </div>
-            </form>
+
             <!-- /.card-body -->
             <div class="card-footer p-0">
                 <div class="mailbox-controls">
@@ -102,6 +102,7 @@
                     <!-- /.float-right -->
                 </div>
             </div>
+            </form>
         </div>
         <!-- /.card -->
     </div>

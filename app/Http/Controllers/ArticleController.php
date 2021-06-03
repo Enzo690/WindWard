@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Repositories\ArticleRepository;
 use App\Http\Requests\ArticleRequest;
 use App\Models\Article;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
@@ -26,7 +27,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        $articles = Article::paginate(10);
+        return view('admin.blog.blog')->with('articles', $articles);
     }
 
     /**
@@ -58,7 +60,7 @@ class ArticleController extends Controller
             'author_id' => $id
         ]);
 
-        return redirect()->route('admin.blog')->with('info', 'L\'article a bien été créé');
+        return redirect()->route('admin.blog')->with('message', 'L\'article a bien été créé');
 
     }
 
@@ -89,7 +91,9 @@ class ArticleController extends Controller
        $article = Article::firstWhere('id', $id);
        $article->content = $request->content;
        $article->title = $request->title;
-       $article->image = $this->articleRepository->uploadImage($request->image, $request);
+       if ($request->hasFile('image')) {
+           $article->image = $this->articleRepository->uploadImage($request->file('image'), $request);
+       }
        $article->update();
         return redirect()->back();
     }
@@ -100,8 +104,10 @@ class ArticleController extends Controller
      * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Article $article)
+    public function destroy(Request $request)
     {
-        //
+        Article::whereIn('id', $request->articles)->delete();
+
+        return redirect('admin/blog/')->with('message', 'Articles supprimer !');
     }
 }
