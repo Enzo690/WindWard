@@ -28,7 +28,7 @@
     </div>
 
     <div id="part" class="blog">
-        <form method="get" id="searchForm">
+        <form method="post" id="searchForm">
 
         <div id="blog-search">
 

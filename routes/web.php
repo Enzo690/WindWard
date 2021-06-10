@@ -26,7 +26,7 @@ Route::get('/', function () {
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::prefix('blog')->group(function () {
-    Route::get('/', [HomeController::class, 'blog'])->name('blog');
+    Route::match(['get', 'post'], '/', [HomeController::class, 'blog']);
     Route::get('/show/{slug}', [HomeController::class, 'showBlog'])->name('showBlog');
 });
 require __DIR__.'/auth.php';

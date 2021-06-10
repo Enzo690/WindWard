@@ -35,8 +35,7 @@ class ArticleRepository
 
     public function search($n, $search)
     {
-        return $this->queryActiveOrderByDate()
-            ->where(function ($q) use ($search) {
+        return Article::where(function ($q) use ($search) {
                 $q->Where('content', 'like', "%$search%")
                     ->orWhere('title', 'like', "%$search%");
             })->paginate($n);

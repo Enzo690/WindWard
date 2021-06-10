@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function blog(Request $request){
         Carbon::setLocale('fr');
 
-        if ($request->has('buttonname')) {
+        if ($request->has('search')) {
             $articles = $this->articleRepository->search(10, $request->search);
         }else{
             $articles = Article::paginate(10);
