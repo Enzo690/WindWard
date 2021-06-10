@@ -34,7 +34,7 @@
                     @csrf
                     <h2>Connexion</h2>
                     <div>
-                        <input type="email" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus size="10" placeholder="Email">
+                        <input type="email" @error('email') is-invalid @enderror name="email" value="{{ old('email') }}" required autocomplete="email" autofocus size="10" placeholder="Email" >
                         <label for="email"></label>
                         @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -43,7 +43,7 @@
                         @enderror
                     </div>
                     <div>
-                        <input type="password" @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" size="10" placeholder="Mot de passe">
+                        <input type="password" @error('password') is-invalid @enderror name="password" required autocomplete="current-password" size="10" placeholder="Mot de passe">
                         <label for="password"></label>
                         @error('password')
                         <span class="invalid-feedback" role="alert">
