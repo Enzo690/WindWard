@@ -37981,11 +37981,6 @@ h3 {
     border-color: #dee2e6;
   }
 }
-.img-back {
-  border: solid 1px;
-  cursor: pointer;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -38298,45 +38293,50 @@ a {
   display: block;
 }
 
-.team #team-stain {
-  margin-top: -350px;
-  margin-left: -400px;
-  position: absolute;
+.team span {
+  width: 70%;
+  height: 2px;
+  margin: auto;
+  background-color: #212121;
+  display: block;
+  text-align: center;
+  opacity: 0.4;
+}
+.team span:first-child {
+  background-color: red !important;
+}
+.team span:last-child {
+  margin-bottom: 300px;
 }
 .team .team-member {
   margin: auto;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
-.team .team-member:last-child {
-  margin-bottom: 300px;
-  margin-top: 150px;
+.team .team-member div {
+  display: block;
 }
-.team .team-member:first-child h2:nth-child(1) {
-  text-align: right !important;
-}
-.team .team-member .team-member-right {
-  float: right !important;
-}
-.team .team-member h2 {
-  margin: 0 !important;
-  text-align: left !important;
-}
-.team .team-member p {
+.team .team-member div p {
   font-family: "Montserrat", sans-serif;
-  width: 65%;
   margin-top: 20px;
+  text-align: center;
   color: #043A5B;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 .team .team-member .team-member-head {
   border: 8px solid #BEEDFA;
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   overflow: hidden;
   margin-left: 35px;
   margin-right: 35px;
+  margin: auto;
+  margin-bottom: 25px;
+}
+.team .team-member .team-member-head:last-child {
+  background-color: red;
 }
 .team .team-member img {
   width: inherit;
@@ -38356,6 +38356,89 @@ a {
 .team .team-member img:hover {
   -o-object-position: center;
      object-position: center;
+}
+
+.connexion img {
+  position: absolute;
+  margin-top: -175px;
+  right: -350px;
+}
+.connexion #connexion-main {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 450px;
+}
+.connexion #connexion-main .connexion-main-block {
+  background-color: #FFFFFF;
+  width: 500px;
+  height: 650px;
+  padding: 25px;
+  position: relative;
+  border: solid #ffffffca 3px;
+  border-radius: 5px;
+  margin: auto;
+  margin-bottom: 50px;
+}
+.connexion #connexion-main h2 {
+  color: #043A5B;
+  letter-spacing: 0px !important;
+  font-family: "Poppins", sans-serif;
+  padding-bottom: 10px;
+}
+.connexion #connexion-main div {
+  margin-top: 50px;
+  text-align: center;
+}
+.connexion #connexion-main input {
+  width: 60%;
+  background-color: #a0ebff;
+  color: white;
+  border: none;
+  border: solid 1px #707070;
+  height: 35px;
+  padding: 10px;
+}
+.connexion #connexion-main input::-moz-placeholder {
+  opacity: 1;
+}
+.connexion #connexion-main input:-ms-input-placeholder {
+  opacity: 1;
+}
+.connexion #connexion-main input[type=text],
+.connexion #connexion-main input::placeholder {
+  opacity: 1;
+}
+.connexion #connexion-main input[type=submit] {
+  background-color: #043A5B;
+  color: white;
+  height: 50px;
+  width: 200px;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  bottom: 10px;
+  right: 10px;
+  position: absolute;
+}
+.connexion #connexion-main input[type=submit]:hover {
+  background-color: #072a41;
+}
+.connexion #connexion-main #connexion-block-checkbox {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.connexion #connexion-main #connexion-block-checkbox label {
+  color: #043A5B;
+  height: 25px;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+.connexion #connexion-main #connexion-block-checkbox input {
+  height: 25px;
+  width: 50px;
 }
 
 #part {

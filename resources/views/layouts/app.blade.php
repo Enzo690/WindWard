@@ -47,10 +47,10 @@
     <!-- Navbar -->
     <nav class="navbar">
         <a class="nav-item" href="/">Accueil<span class="sr-only"></span></a>
-        <a class="nav-item" href="product">Produits<span class="sr-only"></span></a>
-        <a class="nav-item" href="blog">Blog<span class="sr-only"></span></a>
-        <a class="nav-item" href="contact">Contact<span class="sr-only"></span></a>
-        <a class="nav-item" href="team">Équipe<span class="sr-only"></span></a>
+        <a class="nav-item" href="/product">Produits<span class="sr-only"></span></a>
+        <a class="nav-item" href="/blog">Blog<span class="sr-only"></span></a>
+        <a class="nav-item" href="/contact">Contact<span class="sr-only"></span></a>
+        <a class="nav-item" href="/team">Équipe<span class="sr-only"></span></a>
     </nav>
     <!-- Navbar -->
     <!-- Menu burger -->

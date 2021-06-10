@@ -32,14 +32,14 @@
 
         <div id="blog-search">
 
-            <i class="fa fa-caret-left" aria-hidden="true"></i>
+            <a class="pagination-previous btn btn-outline-light"><i class="fa fa-caret-left" aria-hidden="true"></i></a>
             <div class="btn-group">
 
             </div>
             <span>1</span>
             <span class="blog-active">2</span>
             <span>3</span>
-            <i class="fa fa-caret-right" aria-hidden="true"></i>
+            <a class="pagination-previous btn btn-outline-light"><i class="fa fa-caret-right" aria-hidden="true"></i></a>
             <div id="blog-bar">
                     @csrf
                     <input type="text" placeholder="" name="search">
@@ -60,6 +60,7 @@
             </a>
 
             @endforeach
+
 
         <div id="blog-separation"></div>
     </div>
