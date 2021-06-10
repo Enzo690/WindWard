@@ -13,13 +13,6 @@ use Illuminate\Support\Facades\Auth;
 class ArticleController extends Controller
 {
 
-    protected $articleRepository;
-
-    public function __construct(ArticleRepository $articleRepository)
-    {
-        $this->articleRepository = $articleRepository;
-    }
-
     /**
      * Display a listing of the resource.
      *

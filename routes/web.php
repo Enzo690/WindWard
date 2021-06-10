@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ContactController;
@@ -17,20 +18,22 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+*/
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::prefix('blog')->group(function () {
+    Route::get('/', [HomeController::class, 'blog'])->name('blog');
+    Route::get('/show/{slug}', [HomeController::class, 'showBlog'])->name('showBlog');
+});
 require __DIR__.'/auth.php';
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Auth::routes();
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // admin route
 Route::prefix('admin')->middleware(['auth'])->group(function () {

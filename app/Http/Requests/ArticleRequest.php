@@ -9,7 +9,6 @@ class ArticleRequest extends FormRequest
     public function sanitize()
     {
         return [
-        'content'  => 'trim|ucwords',
         'title' => 'trim|ucwords',
         ];
     }
