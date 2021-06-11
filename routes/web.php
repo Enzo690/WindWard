@@ -6,6 +6,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,8 +33,6 @@ Route::prefix('blog')->group(function () {
 require __DIR__.'/auth.php';
 
 Auth::routes();
-
-
 
 // admin route
 Route::prefix('admin')->middleware(['auth'])->group(function () {

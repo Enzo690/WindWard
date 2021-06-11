@@ -38,7 +38,7 @@
 
                                 <tr>
                                     <td>
-                                        {{$user->firstname}}
+                                        {{$user->pseudonyme}}
                                     </td>
                                     <td>
                                         {{$user->lastname}}

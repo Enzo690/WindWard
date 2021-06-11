@@ -448,6 +448,118 @@ a {
      object-position: center;
 }
 
+.connexion img {
+  position: absolute;
+  margin-top: -175px;
+  right: -350px;
+}
+
+.connexion #team-connexion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 450px;
+}
+
+.connexion #team-connexion .team-connexion-block {
+  background-color: #FFFFFF;
+  width: 500px;
+  height: 650px;
+  padding: 25px;
+  position: relative;
+  border: solid #ffffffca 3px;
+  border-radius: 5px;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.connexion #team-connexion h2 {
+  color: #043A5B;
+  letter-spacing: 0px !important;
+  font-family: 'Poppins', sans-serif;
+  padding-bottom: 10px;
+}
+
+.connexion #team-connexion div {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.connexion #team-connexion input {
+  width: 60%;
+  background-color: #a0ebff;
+  color: white;
+  border: none;
+  border: solid 1px #707070;
+  height: 35px;
+  padding: 10px;
+}
+
+.connexion #team-connexion input[type=text],
+.connexion #team-connexion input::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+.connexion #team-connexion input[type=text],
+.connexion #team-connexion input:-ms-input-placeholder {
+  opacity: 1;
+}
+
+.connexion #team-connexion input[type=text],
+.connexion #team-connexion input::-ms-input-placeholder {
+  opacity: 1;
+}
+
+.connexion #team-connexion input[type=text],
+.connexion #team-connexion input::placeholder {
+  opacity: 1;
+}
+
+.connexion #team-connexion input[type=submit] {
+  background-color: #043A5B;
+  color: white;
+  height: 50px;
+  width: 200px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  bottom: 10px;
+  right: 10px;
+  position: absolute;
+}
+
+.connexion #team-connexion input[type=submit]:hover {
+  background-color: #072a41;
+}
+
+.connexion #team-connexion #team-connexion-checkbox {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.connexion #team-connexion #team-connexion-checkbox label {
+  color: #043A5B;
+  height: 25px;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+
+.connexion #team-connexion #team-connexion-checkbox input {
+  height: 25px;
+  width: 50px;
+}
+
 #part {
   display: block;
   padding-top: 100vh;
