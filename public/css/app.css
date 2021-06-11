@@ -1,7 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 @charset "UTF-8";
 body {
-  background-color: black;
   margin: 0;
   padding: 0;
   background-color: #F1F1F1;
@@ -178,36 +177,61 @@ a {
   }
 }
 
+.product {
+  position: relative;
+}
 .product img {
-  width: 60%;
+  width: 1300px;
   margin-left: -20%;
   margin-top: -200px;
+  margin-bottom: 300px;
 }
-.product span {
+.product #product-right {
+  width: 500px;
+  position: absolute;
+  right: 250px;
+  margin-top: -1000px;
+}
+.product #product-right #product-right-button {
+  display: flex;
+  justify-content: center;
+}
+.product #product-right span {
+  width: 70%;
+  height: 2px;
+  margin: auto;
+  background-color: grey;
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  opacity: 0.4;
+}
+.product #product-right a {
+  background-color: #043A5B;
+  border: none;
+  color: white;
+  padding: 27px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
   cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  margin-top: 30px;
 }
-.product .number {
-  margin: 100px;
+.product #product-right a:hover {
+  background-color: #072a41;
 }
-.product .minus,
-.product .plus {
-  width: 20px;
-  border-radius: 4px;
-  padding: 8px 5px 8px 5px;
-  display: inline-block;
-  vertical-align: middle;
+.product #product-right p {
+  color: #043A5B;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 2px;
   text-align: center;
-  font-size: 30px;
+  font-size: 18px;
 }
-.product input {
-  height: 34px;
-  width: 100px;
-  text-align: center;
-  font-size: 26px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  display: inline-block;
-  vertical-align: middle;
+.product #product-right p:first-child {
+  margin-top: 50px;
 }
 
 .blog {
@@ -317,16 +341,13 @@ a {
   width: 70%;
   height: 2px;
   margin: auto;
-  background-color: #212121;
+  background-color: grey;
   display: block;
   text-align: center;
   opacity: 0.4;
 }
-.team span:first-child {
-  background-color: red !important;
-}
 .team span:last-child {
-  margin-bottom: 300px;
+  margin-bottom: 500px;
 }
 .team .team-member {
   margin: auto;
@@ -355,9 +376,6 @@ a {
   margin: auto;
   margin-bottom: 25px;
 }
-.team .team-member .team-member-head:last-child {
-  background-color: red;
-}
 .team .team-member img {
   width: inherit;
   height: inherit;
@@ -378,20 +396,31 @@ a {
      object-position: center;
 }
 
-.connexion img {
+.connexion img,
+.contact img {
   position: absolute;
   margin-top: -175px;
   right: -350px;
 }
-.connexion #connexion-main {
+.connexion #connexion-main,
+.connexion #contact-main,
+.contact #connexion-main,
+.contact #contact-main {
   display: flex;
   flex-wrap: wrap;
   margin-left: 25px;
   margin-right: 25px;
   margin-bottom: 450px;
 }
-.connexion #connexion-main .connexion-main-block {
-  background-color: #FFFFFF;
+.connexion #connexion-main .connexion-main-block,
+.connexion #connexion-main .contact-main-block,
+.connexion #contact-main .connexion-main-block,
+.connexion #contact-main .contact-main-block,
+.contact #connexion-main .connexion-main-block,
+.contact #connexion-main .contact-main-block,
+.contact #contact-main .connexion-main-block,
+.contact #contact-main .contact-main-block {
+  background-color: white;
   width: 500px;
   height: 650px;
   padding: 25px;
@@ -401,17 +430,26 @@ a {
   margin: auto;
   margin-bottom: 50px;
 }
-.connexion #connexion-main h2 {
+.connexion #connexion-main h2,
+.connexion #contact-main h2,
+.contact #connexion-main h2,
+.contact #contact-main h2 {
   color: #043A5B;
   letter-spacing: 0px !important;
   font-family: "Poppins", sans-serif;
   padding-bottom: 10px;
 }
-.connexion #connexion-main div {
+.connexion #connexion-main div,
+.connexion #contact-main div,
+.contact #connexion-main div,
+.contact #contact-main div {
   margin-top: 50px;
   text-align: center;
 }
-.connexion #connexion-main input {
+.connexion #connexion-main input,
+.connexion #contact-main input,
+.contact #connexion-main input,
+.contact #contact-main input {
   width: 60%;
   background-color: #a0ebff;
   color: white;
@@ -420,17 +458,24 @@ a {
   height: 35px;
   padding: 10px;
 }
-.connexion #connexion-main input::-moz-placeholder {
-  opacity: 1;
-}
-.connexion #connexion-main input:-ms-input-placeholder {
-  opacity: 1;
-}
 .connexion #connexion-main input[type=text],
-.connexion #connexion-main input::placeholder {
+.connexion #connexion-main input::placeholder,
+.connexion #connexion-main input::-webkit-input-placeholder,
+.connexion #contact-main input[type=text],
+.connexion #contact-main input::placeholder,
+.connexion #contact-main input::-webkit-input-placeholder,
+.contact #connexion-main input[type=text],
+.contact #connexion-main input::placeholder,
+.contact #connexion-main input::-webkit-input-placeholder,
+.contact #contact-main input[type=text],
+.contact #contact-main input::placeholder,
+.contact #contact-main input::-webkit-input-placeholder {
   opacity: 1;
 }
-.connexion #connexion-main input[type=submit] {
+.connexion #connexion-main input[type=submit],
+.connexion #contact-main input[type=submit],
+.contact #connexion-main input[type=submit],
+.contact #contact-main input[type=submit] {
   background-color: #043A5B;
   color: white;
   height: 50px;
@@ -442,23 +487,67 @@ a {
   right: 10px;
   position: absolute;
 }
-.connexion #connexion-main input[type=submit]:hover {
+.connexion #connexion-main input[type=submit]:hover,
+.connexion #contact-main input[type=submit]:hover,
+.contact #connexion-main input[type=submit]:hover,
+.contact #contact-main input[type=submit]:hover {
   background-color: #072a41;
 }
-.connexion #connexion-main #connexion-block-checkbox {
+.connexion #connexion-main #connexion-block-checkbox,
+.connexion #contact-main #connexion-block-checkbox,
+.contact #connexion-main #connexion-block-checkbox,
+.contact #contact-main #connexion-block-checkbox {
   justify-content: center;
   display: flex;
   align-items: center;
 }
-.connexion #connexion-main #connexion-block-checkbox label {
+.connexion #connexion-main #connexion-block-checkbox label,
+.connexion #contact-main #connexion-block-checkbox label,
+.contact #connexion-main #connexion-block-checkbox label,
+.contact #contact-main #connexion-block-checkbox label {
   color: #043A5B;
   height: 25px;
   letter-spacing: 1px;
   font-size: 20px;
 }
-.connexion #connexion-main #connexion-block-checkbox input {
+.connexion #connexion-main #connexion-block-checkbox input,
+.connexion #contact-main #connexion-block-checkbox input,
+.contact #connexion-main #connexion-block-checkbox input,
+.contact #contact-main #connexion-block-checkbox input {
   height: 25px;
   width: 50px;
+}
+
+.contact .contact-main-block {
+  width: 900px !important;
+  height: 665px !important;
+}
+.contact .contact-main-block div {
+  text-align: left !important;
+}
+.contact .contact-main-block input[type=text],
+.contact .contact-main-block input::placeholder,
+.contact .contact-main-block input,
+.contact .contact-main-block input::-webkit-input-placeholder {
+  color: #043A5B !important;
+}
+.contact .contact-main-block input[type=submit] {
+  color: white !important;
+}
+.contact .contact-main-block textarea {
+  resize: none;
+  width: 60%;
+  color: #043A5B !important;
+  height: 150px;
+  background-color: #a0ebff;
+  border: none;
+  border: solid 1px #707070;
+  padding: 10px;
+}
+.contact .contact-main-block textarea[type=text],
+.contact .contact-main-block textarea::placeholder,
+.contact .contact-main-block textarea::-webkit-input-placeholder {
+  opacity: 1;
 }
 
 #part {
@@ -585,7 +674,7 @@ a {
 }
 #main h2 {
   margin-bottom: 300px;
-  color: #A0EBFF;
+  color: #a0ebff;
 }
 
 .navbar-burger {
@@ -748,6 +837,17 @@ footer #footer-inside #footer-select:hover::after {
   transition: 0.3s;
 }
 
+@media (max-width: 1600px) {
+  .product img {
+    display: none;
+  }
+  .product #product-right {
+    position: initial;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 300px;
+  }
+}
 @media (min-width: 1225px) {
   .navbar-menu {
     display: none;
@@ -776,6 +876,18 @@ footer #footer-inside #footer-select:hover::after {
 
   .navbar {
     display: none;
+  }
+}
+@media (max-width: 750px) {
+  .contact .contact-main-block {
+    width: 900px !important;
+    height: 800px !important;
+  }
+  .contact .contact-main-block input {
+    width: 85% !important;
+  }
+  .contact .contact-main-block textarea {
+    width: 85% !important;
   }
 }
 @media (max-width: 576px) {

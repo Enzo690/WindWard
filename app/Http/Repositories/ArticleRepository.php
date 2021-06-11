@@ -10,7 +10,7 @@ class ArticleRepository
     {
         // Post for slug with user, tags and categories
         $article = Article::with(
-            'author:id,firstname,lastname,email',
+            'author:id,pseudonyme',
         )
             ->whereSlug($slug)
             ->firstOrFail();

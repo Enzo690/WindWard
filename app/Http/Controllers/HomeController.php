@@ -21,6 +21,21 @@ class HomeController extends Controller
         return view('home');
     }
 
+    public function team()
+    {
+        return view('team');
+    }
+
+    public function contact()
+    {
+        return view('contact');
+    }
+
+    public function product()
+    {
+        return view('product');
+    }
+
     public function blog(Request $request){
         Carbon::setLocale('fr');
 
