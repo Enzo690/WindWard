@@ -31,24 +31,6 @@ menuLinks.forEach(
         menuLink.addEventListener("click", toggleMenu)
     }
 )
-
-$("#article-image").click(function() {
-    $("input[id='my_file']").click();
-});
-
-$(".checkbox-toggle").click( (e) => {
-        if ($("input[type='checkbox']:checked").length == $('input[type=\'checkbox\']').length) {
-            $("input[type='checkbox']").prop("checked", false)
-        }else{
-            $("input[type='checkbox']").prop("checked", true)
-
-        }
-})
-
-$('.fa-sync-alt').click(() =>{
-    location.reload();
-});
-
 //Images non sélectionnables
 $("img").attr("draggable", false);
 

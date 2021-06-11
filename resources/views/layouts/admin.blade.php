@@ -23,7 +23,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://kit.fontawesome.com/c1d0ab37d6.js" crossorigin="anonymous"></script>
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-    <script src="{{ asset('js/script.js') }}" defer></script>
+    <script src="{{ asset('js/backScript.js') }}" defer></script>
 
 
 </head>
@@ -149,6 +149,7 @@
         <!-- /.control-sidebar -->
         <div id="sidebar-overlay"></div>
     </aside>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
 <script>
     $(function(){
