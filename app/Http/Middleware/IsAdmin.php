@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Providers\RouteServiceProvider;
 
 class IsAdmin
 {
@@ -18,12 +19,9 @@ class IsAdmin
      */
     public function handle($request, Closure $next)
     {
-        $id = Auth::id();
-        $user = User::find($id);
-        if (Auth::user() && $user->role()->libelle->first() === "admin") {
+        if (Auth::user() && User::find(Auth::id())->role()->first()->libelle === "admin") {
             return $next($request);
         }
-
-        return redirect('/');
+        return redirect(RouteServiceProvider::HOME);
     }
 }

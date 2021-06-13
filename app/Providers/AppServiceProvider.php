@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
 
@@ -25,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Blade::if('isAdmin', function () {
-            return auth()->user();
+            return User::find(Auth::id())->role()->first()->libelle === "admin";
         });
     }
     

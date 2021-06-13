@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -14,7 +15,7 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $response = $this->get('/');
+        $response = $this->get(RouteServiceProvider::HOME);
 
         $response->assertStatus(200);
     }

@@ -6,6 +6,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UserController;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -19,18 +20,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
-Route::get('/', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-*/
-Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get(RouteServiceProvider::HOME, [HomeController::class, 'index'])->name('home');
 Route::get('team', [HomeController::class, 'team'])->name('team');
 Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('product', [HomeController::class, 'product'])->name('product');
 
 Route::prefix('blog')->group(function () {
-    Route::match(['get', 'post'], '/', [HomeController::class, 'blog']);
+    Route::match(['get', 'post'], RouteServiceProvider::HOME, [HomeController::class, 'blog']);
     Route::get('show/{slug}', [HomeController::class, 'showBlog'])->name('showBlog');
 });
 require __DIR__.'/auth.php';
@@ -41,7 +38,7 @@ Auth::routes();
 Route::prefix('admin')->middleware(['admin'])->group(function () {
 
     // base route
-    Route::get('/',[AdminController::class, 'index'])->name('admin.dashboard');
+    Route::get(RouteServiceProvider::HOME,[AdminController::class, 'index'])->name('admin.dashboard');
     Route::get('/blog',[ArticleController::class, 'index'])->name('admin.blog');
     Route::get('/users',[UserController::class, 'index'])->name('admin.users');
     Route::get('/orders',[OrderController::class, 'index'])->name('admin.orders');

@@ -50,9 +50,12 @@
         <a class="nav-item" href="/blog">Blog<span class="sr-only"></span></a>
         <a class="nav-item" href="/contact">Contact<span class="sr-only"></span></a>
         <a class="nav-item"  href="/team">Équipe<span class="sr-only"></span></a>
-        @isAdmin
-        <a class="nav-item"  href="/admin">Administration<span class="sr-only"></span></a>
-        @endisAdmin
+        @auth
+            @isAdmin
+            <a class="nav-item"  href="/admin">Administration<span class="sr-only"></span></a>
+            @endisAdmin
+        @endauth
+        
 
     </nav>
     <!-- Navbar -->
@@ -71,9 +74,11 @@
         <li><a href="/blog">Blog<span class="sr-only"></span></a></li>
         <li><a href="/contact">Contact<span class="sr-only"></span></a></li>
         <li><a href="/team">Équipe<span class="sr-only"></span></a></li>
-        @isAdmin
-        <li><a href="/admin">Administration<span class="sr-only"></span></a></li>
-        @endisAdmin
+        @auth
+            @isAdmin
+            <li><a href="/admin">Administration<span class="sr-only"></span></a></li>
+            @endisAdmin
+        @endauth
     </ul>
     <!-- Menu burger -->
 </header>
