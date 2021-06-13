@@ -20,7 +20,11 @@ class ArticleRepository
 
     public function uploadImage($file, $request){
         $file_path = $file->getPathName();
-        $client = new \GuzzleHttp\Client();
+        $client = new \GuzzleHttp\Client([
+            'curl' => [
+                CURLOPT_CAINFO => base_path('resources/assets/cacert.pem')
+            ]
+        ]);
         $response = $client->request('POST', 'https://api.imgur.com/3/image', [
             'headers' => [
                 'authorization' => 'Client-ID ' . '86edcf523247385',
