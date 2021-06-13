@@ -62,7 +62,7 @@
                             </td>
 
                             <td>
-                                {{$contact->subject()->first()->subject}}
+                                {{$contact->subject}}
                             </td>
 
 

@@ -49,9 +49,9 @@
         <a class="nav-item" href="/product">Produits<span class="sr-only"></span></a>
         <a class="nav-item" href="/blog">Blog<span class="sr-only"></span></a>
         <a class="nav-item" href="/contact">Contact<span class="sr-only"></span></a>
-        <a class="nav-item" href="/team">Équipe<span class="sr-only"></span></a>
+        <a class="nav-item"  href="/team">Équipe<span class="sr-only"></span></a>
         @isAdmin
-        <li><a href="/admin">Administration<span class="sr-only"></span></a></li>
+        <a class="nav-item"  href="/admin">Administration<span class="sr-only"></span></a>
         @endisAdmin
 
     </nav>

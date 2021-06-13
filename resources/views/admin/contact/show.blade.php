@@ -11,7 +11,7 @@
     </div>
     <div class="card card-light card-outline">
         <div class="card-header">
-            <h3 class="card-title">Sujet : {{$contact->subject()->first()->subject}}</h3>
+            <h3 class="card-title">Sujet : {{$contact->subject}}</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body p-0">

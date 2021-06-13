@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class IsAdmin
 {
@@ -17,7 +18,9 @@ class IsAdmin
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user() &&  Auth::user()->role()->libelle === "admin") {
+        $id = Auth::id();
+        $user = User::find($id);
+        if (Auth::user() && $user->role()->libelle->first() === "admin") {
             return $next($request);
         }
 

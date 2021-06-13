@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Repositories\ArticleRepository;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {

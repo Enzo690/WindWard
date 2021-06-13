@@ -26,10 +26,7 @@ class CreateContactsTable extends Migration
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users');
-            $table->bigInteger('subject_id')->unsigned()->index();;
-            $table->foreign('subject_id')
-                ->references('id')
-                ->on('subjects');
+            $table->string('subject');
             $table->softDeletes();
         });
     }
