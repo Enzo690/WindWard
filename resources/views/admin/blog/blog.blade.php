@@ -16,6 +16,7 @@
                 <h3 class="card-title">Articles</h3>
             </div>
             <!-- /.card-header -->
+
             <form method="post" action="{{ route("article.destroy") }}" >
                 @csrf
                 <input name="_method" type="hidden" value="DELETE">
@@ -23,6 +24,8 @@
                 <div class="card-body p-0">
                     <div class="mailbox-controls">
                         <!-- Check all button -->
+                        <a href="/admin/blog/create" class="btn btn-outline-primary">Créer un article</a>
+
                         <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="far fa-square"></i>
                         </button>
                         <div class="btn-group">
@@ -83,6 +86,9 @@
                 <div class="card-footer p-0">
                     <div class="mailbox-controls">
                         <!-- Check all button -->
+
+                        <a href="/admin/blog/create" class="btn btn-outline-primary">Créer un article</a>
+
                         <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="far fa-square"></i>
                         </button>
                         <div class="btn-group">

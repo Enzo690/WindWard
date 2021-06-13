@@ -40,9 +40,9 @@ Route::prefix('admin')->middleware(['admin'])->group(function () {
     // base route
     Route::get(RouteServiceProvider::HOME,[AdminController::class, 'index'])->name('admin.dashboard');
     Route::get('/blog',[ArticleController::class, 'index'])->name('admin.blog');
-    Route::get('/users',[UserController::class, 'index'])->name('admin.users');
     Route::get('/orders',[OrderController::class, 'index'])->name('admin.orders');
     Route::get('/contact',[ContactController::class, 'index'])->name('admin.contact');
+    Route::get('/users',[UserController::class, 'index'])->name('admin.users');
 
     // show view
     Route::get('/contact/{id}',[ContactController::class, 'show'])->name('contact.show');
@@ -64,5 +64,6 @@ Route::prefix('admin')->middleware(['admin'])->group(function () {
 
     // update
     Route::put('/blog/update/{id}', [ArticleController::class, 'update'])->name('admin.blog.update');
+    Route::put('/users/update/{id}', [UserController::class, 'update'])->name('admin.users.update');
 
 });

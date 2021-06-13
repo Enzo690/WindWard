@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 @section('content')
+<div class="col-md-12">
+
     <div class="content-header">
         <div class="row mb-2">
             <div >
@@ -43,4 +45,6 @@
         <input name="_method" id="chooseFiles" type="hidden" value="PUT">
 
     </form>
+</div>
+
 @endsection

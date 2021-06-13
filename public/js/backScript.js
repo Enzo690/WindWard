@@ -1,19 +1,29 @@
-$("#article-image").click(function() {
+$("#article-image").click(function () {
     $("input[id='chooseFiles']").click();
 });
 
-$(".checkbox-toggle").click( (e) => {
+$(".checkbox-toggle").click((e) => {
     if ($("input[type='checkbox']:checked").length == $('input[type=\'checkbox\']').length) {
         $("input[type='checkbox']").prop("checked", false)
-    }else{
+    } else {
         $("input[type='checkbox']").prop("checked", true)
 
     }
 })
 
-$('.fa-sync-alt').click(() =>{
+$('.fa-sync-alt').click(() => {
     location.reload();
 });
+
+
+// pour obtenir l'url
+function getUrl(where) {
+    // Supprimons l'éventuel dernier slash de l'URL
+    let urlcourante = document.location.href.replace(/\/$/, "");
+    // Gardons dans la variable queue_url uniquement la portion derrière le dernier slash de urlcourante
+    let queue_url = urlcourante.substring(urlcourante.lastIndexOf(where) + 1);
+    return queue_url;
+}
 
 (function (global) {
     var imagesPerRow = 3,

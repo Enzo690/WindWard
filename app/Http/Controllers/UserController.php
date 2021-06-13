@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
@@ -50,22 +52,18 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $contact = Contact::find($id);
-        if ($contact === null){
-            return Redirect::back()->withErrors(['Aucune demande trouvé!', 'Aucune demande trouvé!']);
-        }
-        return view('admin.contact.show')->with('contact', $contact);
-    }
+        $user = User::find($id);
+        $roles = Role::all();
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\User $user
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Contact $contact)
-    {
-        //
+        $data = [
+            'user'  => $user,
+            'roles'   => $roles,
+        ];
+        
+        if ($user === null){
+            return Redirect::back()->withErrors(['Aucun utilisateur trouvé!', 'Aucune utilisateur trouvé!']);
+        }
+        return view('admin.user.show')->with($data);
     }
 
     /**
@@ -75,9 +73,19 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
-        //
+       $user = User::firstWhere('id', $id);
+       $user->pseudonyme = $request->pseudonyme;
+       $user->email = $request->email;
+       if ($request->filled('password')) {
+            $user->password = Hash::make($request->password);
+       }
+       if ($request->filled('role_id')) {
+           $user->role_id = $request->role_id;
+       }
+       $user->update();
+        return redirect()->back();
     }
 
     /**
@@ -88,7 +96,7 @@ class UserController extends Controller
      */
     public function destroy(Request $request)
     {
-        Contact::whereIn('id', $request->id)->delete();
+        Contact::whereIn('id', $request->users)->delete();
 
         return redirect('admin/users/')->with('message', 'Utilisateurs supprimer !');
     }

@@ -22,6 +22,14 @@
 
                 <div class="card-body p-0">
                     <div class="mailbox-controls">
+                        <!-- Check all button -->
+                        <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="far fa-square"></i>
+                        </button>
+                        <div class="btn-group">
+                            <button type="submit" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
+                        </div>
+                        <!-- /.btn-group -->
+                        <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
                         <div class="float-right">
                             <div class="btn-group">
                                 {{ $users->links() }}
@@ -33,15 +41,29 @@
                     <div class="table-responsive mailbox-messages">
 
                         <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Nom d'utilisateur</th>
+                                    <th>Role</th>
+                                    <th>Email</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
                             <tbody>
                             @foreach ($users as $user)
 
                                 <tr>
                                     <td>
+                                        <div class="icheck-primary">
+                                            <input name="users[]" type="checkbox" value="{{$user->id}}" id="check1">
+                                        </div>
+                                    </td>
+                                    <td>
                                         {{$user->pseudonyme}}
                                     </td>
                                     <td>
-                                        {{$user->lastname}}
+                                        {{$user->role->libelle}}
                                     </td>
 
                                     <td>
@@ -49,7 +71,7 @@
                                     </td>
 
                                     <td>
-                                        <a href="/admin/contact/{{$user->id}}"><i class="fas fa-search"></i></a>
+                                        <a href="/admin/users/{{$user->id}}"><i class="fas fa-search"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -66,9 +88,18 @@
             <!-- /.card-body -->
             <div class="card-footer p-0">
                 <div class="mailbox-controls">
+                    <!-- Check all button -->
+                    <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="far fa-square"></i>
+                    </button>
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
+                    </div>
+                    <!-- /.btn-group -->
+                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
                     <div class="float-right">
                         <div class="btn-group">
                             {{ $users->links() }}
+
                         </div>
                         <!-- /.btn-group -->
                     </div>

@@ -5,7 +5,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -19,11 +18,17 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://kit.fontawesome.com/c1d0ab37d6.js" crossorigin="anonymous"></script>
-    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+
+    <!-- Scripts -->
     <script src="{{ asset('js/backScript.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/js/adminlte.min.js"></script>
+    <script src="https://kit.fontawesome.com/c1d0ab37d6.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
 
 </head>
@@ -92,13 +97,6 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="/admin/orders" class="nav-link {{Route::current()->getName() === "admin.orders" ? "active" : ""}}">
-                            <i class="fas fa-money-check nav-icon"></i>
-                            <p>Commandes</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
                         <a href="/admin/blog" class="nav-link {{Route::current()->getName() === "admin.blog" ? "active" : ""}}">
                             <i class="fas fa-comments nav-icon"></i>
                             <p>Blog</p>
@@ -149,8 +147,9 @@
         <!-- /.control-sidebar -->
         <div id="sidebar-overlay"></div>
     </aside>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
+
+</body>
 <script>
     $(function(){
         $('.editor').each(function(e){
@@ -160,11 +159,3 @@
         });
     });
 </script>
-
-<script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/js/adminlte.min.js"></script>
-<script src="https://kit.fontawesome.com/c1d0ab37d6.js" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/js/adminlte.min.js"></script>
-
-</body>
