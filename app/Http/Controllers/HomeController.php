@@ -29,7 +29,7 @@ class HomeController extends Controller
 
     public function contact()
     {
-        return view('contact');
+        return Auth::check() ? view('contact') : view("auth.login");
     }
 
     public function product()
@@ -37,21 +37,23 @@ class HomeController extends Controller
         return view('product');
     }
 
-    public function blog(Request $request){
+    public function blog(Request $request)
+    {
         Carbon::setLocale('fr');
 
         if ($request->has('search')) {
             $articles = $this->articleRepository->search(10, $request->search);
-        }else{
+        } else {
             $articles = Article::paginate(10);
         }
         return view('blog.blog')->with('articles', $articles);
     }
 
-    public function showBlog($slug){
+    public function showBlog($slug)
+    {
         $article = $this->articleRepository->getArticleBySlug($slug);
 
-        if ($article === null){
+        if ($article === null) {
             return Redirect::back()->withErrors(['Aucun article trouvé!', 'Aucun article trouvé!']);
         }
         return view('blog.show')->with('article', $article);

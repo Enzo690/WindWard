@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
 class ContactController extends Controller
@@ -20,15 +21,6 @@ class ContactController extends Controller
         return view('admin.contact.contact')->with('contacts', $contacts);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -36,9 +28,26 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
-        //
+
+        if (Auth::check()) {
+    
+            $id = Auth::id();
+            Contact::create([
+
+                'firstname' => $request->firstname,
+                'lastname' => $request->lastname,
+                'email' => $request->email,
+                'content' => $request->message,
+                'user_id' => Auth::id(),
+                'subject' => $request->subject,
+                'phone' => $request->phone,
+            ]);
+            return redirect()->route('contact')->with('message', 'La demande a bien été créé');
+        } else {
+            return redirect()->route('home')->with('message', 'Vous devez être connecté');
+        }
     }
 
     /**
@@ -50,7 +59,7 @@ class ContactController extends Controller
     public function show($id)
     {
         $contact = Contact::find($id);
-        if ($contact === null){
+        if ($contact === null) {
             return Redirect::back()->withErrors(['Aucune demande trouvé!', 'Aucune demande trouvé!']);
         }
         return view('admin.contact.show')->with('contact', $contact);

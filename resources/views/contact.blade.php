@@ -55,17 +55,18 @@
         <img src="/images/stain-3.svg" alt="Stain">
         <div id="contact-main">
             <div class="contact-main-block">
-                <form action="" method="post">
+                <form action="{{ route('contact.store') }}" method="post">
+                    @csrf
                     <div>
-                        <input type="text" name="name" size="10" placeholder="Nom">
+                        <input type="text" name="firstname" size="10" placeholder="Nom">
                         <label for="name"></label>
                     </div>
                     <div>
-                        <input type="text" name="surname" size="10" placeholder="Prénom">
+                        <input type="text" name="lastname" size="10" placeholder="Prénom">
                         <label for="surname"></label>
                     </div>
                     <div>
-                        <input type="email" name="email" size="10" placeholder="Email">
+                        <input type="email" value="{{ Auth::user()->email }}" name="email" size="10" placeholder="Email">
                         <label for="email"></label>
                     </div>
                     <div>

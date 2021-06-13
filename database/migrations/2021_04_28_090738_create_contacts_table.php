@@ -27,6 +27,7 @@ class CreateContactsTable extends Migration
                 ->references('id')
                 ->on('users');
             $table->string('subject');
+            $table->string('phone');
             $table->softDeletes();
         });
     }

@@ -28,6 +28,7 @@ class ContactFactory extends Factory
             'content' => $this->faker->sentence(20),
             'user_id' => $this->faker->numberBetween(1,10),
             'subject' => $this->faker->word(),
+            'phone' => $this->faker->phoneNumber()
         ];
     }
 }

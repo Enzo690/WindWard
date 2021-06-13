@@ -21,10 +21,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*  
+ route for guest or normal user
+ get
+*/
 Route::get(RouteServiceProvider::HOME, [HomeController::class, 'index'])->name('home');
 Route::get('team', [HomeController::class, 'team'])->name('team');
 Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('product', [HomeController::class, 'product'])->name('product');
+
+// post
+
+Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');
+
+// blog routes
 
 Route::prefix('blog')->group(function () {
     Route::match(['get', 'post'], RouteServiceProvider::HOME, [HomeController::class, 'blog']);

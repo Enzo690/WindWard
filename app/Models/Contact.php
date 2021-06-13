@@ -10,6 +10,21 @@ class Contact extends Model
 {
     use HasFactory, SoftDeletes;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'firstname',
+        'lastname',
+        'email',
+        'content',
+        'user_id',
+        'subject',
+        'phone',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -19,5 +34,4 @@ class Contact extends Model
     {
         return $this->belongsTo(Subject::class);
     }
-
 }
