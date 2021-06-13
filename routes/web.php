@@ -38,7 +38,7 @@ require __DIR__.'/auth.php';
 Auth::routes();
 
 // admin route
-Route::prefix('admin')->middleware(['auth'])->group(function () {
+Route::prefix('admin')->middleware(['admin'])->group(function () {
 
     // base route
     Route::get('/',[AdminController::class, 'index'])->name('admin.dashboard');

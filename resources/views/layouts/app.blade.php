@@ -50,6 +50,10 @@
         <a class="nav-item" href="/blog">Blog<span class="sr-only"></span></a>
         <a class="nav-item" href="/contact">Contact<span class="sr-only"></span></a>
         <a class="nav-item" href="/team">Équipe<span class="sr-only"></span></a>
+        @isAdmin
+        <li><a href="/admin">Administration<span class="sr-only"></span></a></li>
+        @endisAdmin
+
     </nav>
     <!-- Navbar -->
     <!-- Menu burger -->
@@ -63,11 +67,13 @@
     </button>
     <ul class="navbar-menu">
         <li><a href="/">Accueil<span class="sr-only"></span></a></li>
-        <li><a href="href">Produits<span class="sr-only"></span></a></li>
-        <li><a href="href">Blog<span class="sr-only"></span></a></li>
-        <li><a href="href">Contact<span class="sr-only"></span></a></li>
-        <li><a href="href">Équipe<span class="sr-only"></span></a></li>
-        
+        <li><a href="/product">Produits<span class="sr-only"></span></a></li>
+        <li><a href="/blog">Blog<span class="sr-only"></span></a></li>
+        <li><a href="/contact">Contact<span class="sr-only"></span></a></li>
+        <li><a href="/team">Équipe<span class="sr-only"></span></a></li>
+        @isAdmin
+        <li><a href="/admin">Administration<span class="sr-only"></span></a></li>
+        @endisAdmin
     </ul>
     <!-- Menu burger -->
 </header>

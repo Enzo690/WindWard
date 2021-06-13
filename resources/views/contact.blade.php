@@ -29,18 +29,15 @@
 
         @guest
 
-            @if (Route::has('register'))
-                <a href="{{ route('register') }}" class="header-button" id="header-register">
-                    Insription
-                </a>
-            @endif
+        @if (Route::has('login'))
 
-            @if (Route::has('login'))
-
-                <a href="{{ route('admin.dashboard') }}" id="header-login">
-                    Connexion
-                </a>
-            @endif
+        <a href="/login" id="header-login">
+            Connexion
+        </a>
+        <a href="/login" class="header-button" id="header-register">
+            Insription
+        </a>
+    @endif
 
         @endguest
 
