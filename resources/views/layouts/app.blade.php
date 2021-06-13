@@ -67,6 +67,7 @@
         <li><a href="href">Blog<span class="sr-only"></span></a></li>
         <li><a href="href">Contact<span class="sr-only"></span></a></li>
         <li><a href="href">Équipe<span class="sr-only"></span></a></li>
+        
     </ul>
     <!-- Menu burger -->
 </header>

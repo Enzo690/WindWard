@@ -51,7 +51,7 @@
         <img src="/images/stain-1.svg" alt="Stain">
 
             @foreach ($articles as $article)
-            <a href="blog/show/{{$article->slug}}">
+            <a href="/blog/show/{{$article->slug}}">
 
                 <div class="article">
                     <h2>{{$article->title}}</h2>

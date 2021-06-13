@@ -29,7 +29,7 @@
 
 
     <div id="part" class="article">
-        <p>{{$article->content}}</p>
+        <div class="d-flex justify-content-center col-lg-12">{!! $article->content !!}</div>
         <img src="{{$article->image}}">
     </div>
 
