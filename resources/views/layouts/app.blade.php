@@ -16,7 +16,6 @@
 
     <title>{{ config('app.name', 'Windward') }}</title>
 
-
     <link rel="icon" type="image/svg" href="{{ asset('images/favicon.svg') }}" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
@@ -55,7 +54,7 @@
             <a class="nav-item"  href="/admin">Administration<span class="sr-only"></span></a>
             @endisAdmin
         @endauth
-        
+
 
     </nav>
     <!-- Navbar -->
