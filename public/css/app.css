@@ -21,7 +21,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  width: 35%;
+  width: 40%;
   padding-top: 75px;
   margin-left: 5%;
   z-index: 1;
@@ -51,6 +51,8 @@ a {
   font-size: 50px;
   letter-spacing: 5px;
   margin-top: 25vh;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 #header #header-login,
 #header #header-register {
@@ -177,9 +179,6 @@ a {
   }
 }
 
-.product {
-  position: relative;
-}
 .product img {
   width: 1300px;
   margin-left: -20%;

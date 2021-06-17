@@ -17,17 +17,17 @@
             <button  type="submit" class="btn btn-outline-primary">Poster</button>
         </div>
 
-        <label class="col-form-label" for="title-article">Titre de l'article</label>
+        <label class="col-form-label" for="title-article">Titre</label>
 
         <div class="input-group" style="margin-bottom: 2%">
-            <input id="title-article" class="form-control" type="text" placeholder="Titre de l'article" name="title">
+            <input id="title-article" class="form-control" type="text" placeholder="Titre" name="title">
         </div>
 
         <div class="input-group" style="margin-bottom: 2%">
             <input type="file" name="image" id="image">
         </div>
 
-        <label for="editor">Editeur de texte</label>
+        <label for="editor">Texte</label>
 
         <textarea id="editor" class="editor form-control" name="content"></textarea>
 

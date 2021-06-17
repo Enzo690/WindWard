@@ -7,17 +7,17 @@
         @auth
 
 
-        <div class="dropdown header-buttonflex" style="background-color: white;" id="header-register">
-            <a id="my-dropdown" href="section=mysection" class="dropdown-toggle" style=" color: #043A5B;" data-toggle="dropdown">{{ Auth::user()->pseudonyme }}</a>
+        <div class="dropdown header-buttonflex" style="background-color: #043A5B;" id="header-register">
+            <a id="my-dropdown" href="section=mysection" class="dropdown-toggle" style=" color: white;" data-toggle="dropdown">{{ Auth::user()->pseudonyme }}</a>
         
             <ul class="dropdown-menu">
-                <form method="POST" action="{{ route('logout') }}">
+                <form style="text-align: center;" method="POST" action="{{ route('logout') }}">
                     @csrf
 
                     <a style="padding: 3%" class="text-danger" href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Log out') }}
+                        {{ __('Déconnexion') }}
                 </a>
                 </form>
             </ul>

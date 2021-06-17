@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta charset="UTF-8">
     <meta name="robots" content="noindex">
     <meta content="WindWard" property="og:title">
     <meta content="WindWard" property="og:site_name">
@@ -52,7 +51,7 @@
         <a class="nav-item"  href="/team">Équipe<span class="sr-only"></span></a>
         @auth
             @isAdmin
-            <a class="nav-item"  href="/admin">Administration<span class="sr-only"></span></a>
+            <a class="nav-item"  href="/admin"><i class="fa fa-cog" aria-hidden="true"></i></a>
             @endisAdmin
         @endauth
         

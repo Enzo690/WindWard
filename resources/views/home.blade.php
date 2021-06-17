@@ -5,17 +5,17 @@
         @auth
 
 
-        <div class="dropdown header-buttonflex" style="background-color: white;" id="header-register">
-            <a id="my-dropdown" href="section=mysection" class="dropdown-toggle" style=" color: #043A5B;" data-toggle="dropdown">{{ Auth::user()->pseudonyme }}</a>
+        <div class="dropdown header-buttonflex" style="background-color: #043A5B;" id="header-register">
+            <a id="my-dropdown" href="section=mysection" class="dropdown-toggle" style=" color: white;" data-toggle="dropdown">{{ Auth::user()->pseudonyme }}</a>
         
             <ul class="dropdown-menu">
-                <form method="POST" action="{{ route('logout') }}">
+                <form style="text-align: center;" method="POST" action="{{ route('logout') }}">
                     @csrf
 
                     <a style="padding: 3%" class="text-danger" href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Log out') }}
+                        {{ __('Déconnexion') }}
                 </a>
                 </form>
             </ul>
@@ -44,8 +44,8 @@
         </div>
         <h1>WindWard</h1>
         <h2>Procurez-vous des éoliennes pour les personnes dans le besoin</h2>
-        <a href="href" class="header-button">
-            En savoir plus
+        <a href="product" class="header-button">
+            Commander
         </a>
     </div>
     <div id="part">
@@ -65,7 +65,7 @@
             </div>
             <div id="part-blue-separation">
                 <h2>Vous alimenter ? Notre mission !</h2>
-                <a href="purchase" id="part-blue-about">
+                <a href="en-savoir-plus-sur-windward" id="part-blue-about">
                     En savoir plus sur nos services
                 </a>
                 <img src="/images/mountain.png" alt="">

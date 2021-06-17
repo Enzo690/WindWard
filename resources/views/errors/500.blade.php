@@ -1,12 +1,7 @@
-@extends('layouts.errors')
+@extends('layouts.app')
 @section('content')
 <div id="header" style="background-image: url('/images/background/header.svg')">
-    <a href="href" class="header-button" id="header-register">
-        Insription
-    </a>
-    <a href="href" id="header-login">
-        Connexion
-    </a>
+  
     <h1 class="header-title">Erreur<p>500</p>
     </h1>
 </div>

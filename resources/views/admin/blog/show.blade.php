@@ -14,14 +14,9 @@
 
         @csrf
 
-
-        <div class=" d-flex justify-content-start" >
-            <button  type="submit" class="btn btn-outline-primary">Editer</button>
-        </div>
-
-        <label class="col-form-label" for="title-article">Titre de l'article</label>
+        <label class="col-form-label" for="title-article">Titre</label>
         <div class="input-group" style="margin-bottom: 2%">
-            <input id="title-article" class="form-control" value="{{$article->title}}" type="text" placeholder="Titre de l'article" name="title">
+            <input id="title-article" class="form-control" value="{{$article->title}}" type="text" placeholder="Titre" name="title">
         </div>
 
         <div class="input-group d-flex" style="margin-bottom: 2%">
@@ -36,11 +31,11 @@
 
 
 
-        <label for="editor">Editeur de texte</label>
+        <label for="editor">Texte</label>
 
         <textarea id="editor" class="editor form-control" name="content">{{$article->content}}</textarea>
         <div class="input-group" style="margin-bottom: 1%; margin-top: 1%">
-            <button type="submit" class="btn btn-outline-primary">Editer</button>
+            <button type="submit" class="btn btn-outline-primary">Éditer</button>
         </div>
         <input name="_method" id="chooseFiles" type="hidden" value="PUT">
 

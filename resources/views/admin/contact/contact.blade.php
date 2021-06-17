@@ -12,9 +12,7 @@
 
     <div class="col-md-12">
         <div class="card card-light card-outline">
-            <div class="card-header">
-                <h3 class="card-title">Contact</h3>
-            </div>
+            <div class="card-header"></div>
             <!-- /.card-header -->
             <form method="post" action="{{ route("contact.destroy") }}" >
                 @csrf

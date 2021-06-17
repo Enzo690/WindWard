@@ -12,9 +12,7 @@
 
     <div class="col-md-12">
         <div class="card card-light card-outline">
-            <div class="card-header">
-                <h3 class="card-title">Utilisateurs</h3>
-            </div>
+            <div class="card-header"></div>
             <!-- /.card-header -->
             <form method="post" action="{{ route("user.destroy") }}" >
                 @csrf
@@ -44,8 +42,8 @@
                             <thead>
                                 <tr>
                                     <th></th>
-                                    <th>Nom d'utilisateur</th>
-                                    <th>Role</th>
+                                    <th>Nom</th>
+                                    <th>Rôle</th>
                                     <th>Email</th>
                                     <th></th>
                                 </tr>
