@@ -14,7 +14,7 @@
     <meta content="WindWard, procurez-vous des éoliennes pour les personnes dans le besoin" name="description">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Windward') }}</title>
+    <title>{{ config('app.name', 'WindWard') }}</title>
 
 
     <link rel="icon" type="image/svg" href="{{ asset('images/favicon.svg') }}" />
@@ -52,11 +52,9 @@
         <a class="nav-item"  href="/team">Équipe<span class="sr-only"></span></a>
         @auth
             @isAdmin
-            <a class="nav-item"  href="/admin">Administration<span class="sr-only"></span></a>
+            <a id="admin" class="nav-item" href="/admin">Administration<span class="sr-only"></span></a>
             @endisAdmin
         @endauth
-        
-
     </nav>
     <!-- Navbar -->
     <!-- Menu burger -->

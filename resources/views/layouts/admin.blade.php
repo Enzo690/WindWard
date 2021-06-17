@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'WindWard') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,7 +21,7 @@
     <script src="https://kit.fontawesome.com/c1d0ab37d6.js" crossorigin="anonymous"></script>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/backScript.js') }}" defer></script>
+    <script src="{{ asset('js/back.js') }}" defer></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 
@@ -123,7 +123,7 @@
             @if($errors->any())
                 <div class="alert alert-danger alert-dismissible col-lg-12">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <h5><i class="icon fas fa-ban"></i> Alert!</h5>
+                    <h5><i class="icon fas fa-ban"></i> Alerte !</h5>
                     {{$errors->first()}}
                 </div>
             @endif
@@ -133,8 +133,8 @@
     </div>
 
     <footer class="main-footer">
-        <strong>Copyright © 2014-2019 WindWard.</strong>
-        All rights reserved.
+        <strong>Copyright © 2014-2019 WindWard</strong>
+        All rights reserved
         <div class="float-right d-none d-sm-inline-block">
             <b>Version</b> 1.0.0
         </div>
