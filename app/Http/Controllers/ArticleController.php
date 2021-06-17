@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Repositories\ArticleRepository;
 use App\Http\Requests\ArticleRequest;
 use App\Models\Article;
 use Illuminate\Http\Request;
@@ -99,6 +98,9 @@ class ArticleController extends Controller
      */
     public function destroy(Request $request)
     {
+
+        if (!$request->has('articles'))  return redirect('admin/blog/')->withErrors(['Aucun article selectionnés !', 'Aucun article selectionnés !']);
+
         Article::whereIn('id', $request->articles)->delete();
 
         return redirect('admin/blog/')->with('message', 'Articles supprimer !');

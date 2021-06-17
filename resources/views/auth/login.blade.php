@@ -2,10 +2,10 @@
 @section('content')
 
     <div id="header" style="background-image: url('/images/background/header.svg')">
-        <a href="href" class="header-button" id="header-register">
+        <a href="/login" class="header-button" id="header-register">
             Insription
         </a>
-        <a href="href" id="header-login">
+        <a href="/login" id="header-login">
             Connexion
         </a>
         <div id="header-arrow">
