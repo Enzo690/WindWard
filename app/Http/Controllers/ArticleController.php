@@ -98,6 +98,9 @@ class ArticleController extends Controller
      */
     public function destroy(Request $request)
     {
+
+        if (!$request->has('articles'))  return redirect('admin/blog/')->withErrors(['Aucun article selectionnés !', 'Aucun article selectionnés !']);
+
         Article::whereIn('id', $request->articles)->delete();
 
         return redirect('admin/blog/')->with('message', 'Articles supprimer !');

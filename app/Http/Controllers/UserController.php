@@ -24,27 +24,6 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  \App\Models\User  $contact
@@ -59,7 +38,7 @@ class UserController extends Controller
             'user'  => $user,
             'roles'   => $roles,
         ];
-        
+
         if ($user === null){
             return Redirect::back()->withErrors(['Aucun utilisateur trouvé!', 'Aucune utilisateur trouvé!']);
         }
@@ -96,6 +75,9 @@ class UserController extends Controller
      */
     public function destroy(Request $request)
     {
+
+        if (!$request->has('users'))  return redirect('admin/users/')->withErrors(['Aucun membres selectionnés !', 'Aucun membres selectionnés !']);
+
         Contact::whereIn('id', $request->users)->delete();
 
         return redirect('admin/users/')->with('message', 'Utilisateurs supprimer !');

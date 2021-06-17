@@ -32,7 +32,7 @@ class ContactController extends Controller
     {
 
         if (Auth::check()) {
-    
+
             $id = Auth::id();
             Contact::create([
 
@@ -66,29 +66,6 @@ class ContactController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Contact  $contact
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Contact $contact)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Contact  $contact
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Contact $contact)
-    {
-        //
-    }
-
-    /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Contact  $contact
@@ -96,6 +73,9 @@ class ContactController extends Controller
      */
     public function destroy(Request $request)
     {
+
+        if (!$request->has('contacts'))  return redirect('admin/contact/')->withErrors(['Aucun contacts selectionnés !', 'Aucun contacts selectionnés !']);
+
         Contact::whereIn('id', $request->contacts)->delete();
 
         return redirect('admin/contact/')->with('message', 'Contact supprimer !');
