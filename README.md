@@ -6,9 +6,7 @@
 2. Il vous faut composer sur votre machine puis : `composer install`
 3. Installer les dépendances Node.js, attention de bian avoir Node.js sur sa machine : `npm i`
 4. Créer la BDD avec un nom à retenir en *utf8_general_ci*
-5. Créer la structure de la BDD : `php artisan migrate`
-6. Ajouter des données de test dans la BDD `php artisan db:seed`
-7. Créer un fichier : *.env* à la racine du projet et copier le contenu du *.env.example* à l'intérieur et modifier les données pour faire fonctionner le projet : 
+5. Créer un fichier : *.env* à la racine du projet et copier le contenu du *.env.example* à l'intérieur et modifier les données pour faire fonctionner le projet :
 
 ```
 DB_CONNECTION=mysql
@@ -19,6 +17,8 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
+6. Créer la structure de la BDD : `php artisan migrate`
+7. Ajouter des données de test dans la BDD `php artisan db:seed`
 8. Lancer à la racine du projet : `php artisan serve` puis accéder au site avec le lien donné
 
 ## Administration
