@@ -240,9 +240,10 @@ a {
 .blog img {
   position: absolute;
   z-index: -1;
+  width: 1250px;
 }
 .blog #blog-separation {
-  height: 500px;
+  height: 1500px;
   width: 100%;
 }
 .blog #blog-search {
