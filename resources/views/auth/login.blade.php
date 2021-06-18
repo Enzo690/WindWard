@@ -2,7 +2,7 @@
 @section('content')
 
     <div id="header" style="background-image: url('/images/background/header.svg')">
-        <a href="/login" class="header-button" id="header-register">
+        <a href="/login" class="header-button header-register">
             Insription
         </a>
         <a href="/login" id="header-login">
@@ -17,7 +17,7 @@
         </h1>
     </div>
     <div id="part" class="connexion">
-        <img src="/images/stain-3.svg" alt="Stain">
+        <img src="/images/stain-3.svg" alt="">
         <div id="connexion-main">
             <div class="connexion-main-block">
                 <form method="POST" action="{{ route('login') }}">
@@ -33,7 +33,7 @@
                         @enderror
                     </div>
                     <div>
-                        <input type="password" @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" size="10" placeholder="Mot de passe">
+                        <input type="password" @error('password') is-invalid @enderror name="password" required autocomplete="current-password" size="10" placeholder="Mot de passe">
                         <label for="password"></label>
                         @error('password')
                         <span class="invalid-feedback" role="alert">

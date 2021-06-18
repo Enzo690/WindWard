@@ -52,7 +52,7 @@ a {
         margin-left: 10px;
     }
     #header-login,
-    #header-register {
+    .header-register {
         display: flex;
         position: absolute;
         font-family: 'Poppins', sans-serif;
@@ -60,7 +60,7 @@ a {
     .header-button {
         font-family: Arial, Helvetica, sans-serif;
     }
-    #header-register,
+    .header-register,
     .header-button {
         background-color: $darkBlue;
         color: $white;
@@ -384,6 +384,18 @@ a {
         margin-left: 25px;
         margin-right: 25px;
         margin-bottom: 450px;
+        #team-connexion-checkbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            label {
+                margin-bottom: 0 !important;
+            }
+            input {
+                width: 15px;
+                margin-right: 25px;
+            }
+        }
         .connexion-main-block,
         .contact-main-block {
             background-color: $white;
@@ -674,7 +686,7 @@ a {
 }
 
 #footer-social {
-    padding-top: 300px;
+    padding-top: 400px;
     margin-bottom: 125px;
     display: flex;
     flex-wrap: wrap;

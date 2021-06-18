@@ -55,7 +55,7 @@ a {
   margin-left: 10px;
 }
 #header #header-login,
-#header #header-register {
+#header .header-register {
   display: flex;
   position: absolute;
   font-family: "Poppins", sans-serif;
@@ -63,7 +63,7 @@ a {
 #header .header-button {
   font-family: Arial, Helvetica, sans-serif;
 }
-#header #header-register,
+#header .header-register,
 #header .header-button {
   background-color: #043A5B;
   color: white;
@@ -76,7 +76,7 @@ a {
   cursor: pointer;
   right: 100px;
 }
-#header #header-register:hover,
+#header .header-register:hover,
 #header .header-button:hover {
   background-color: #072a41;
   color: white;
@@ -411,6 +411,27 @@ a {
   margin-right: 25px;
   margin-bottom: 450px;
 }
+.connexion #connexion-main #team-connexion-checkbox,
+.connexion #contact-main #team-connexion-checkbox,
+.contact #connexion-main #team-connexion-checkbox,
+.contact #contact-main #team-connexion-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.connexion #connexion-main #team-connexion-checkbox label,
+.connexion #contact-main #team-connexion-checkbox label,
+.contact #connexion-main #team-connexion-checkbox label,
+.contact #contact-main #team-connexion-checkbox label {
+  margin-bottom: 0 !important;
+}
+.connexion #connexion-main #team-connexion-checkbox input,
+.connexion #contact-main #team-connexion-checkbox input,
+.contact #connexion-main #team-connexion-checkbox input,
+.contact #contact-main #team-connexion-checkbox input {
+  width: 15px;
+  margin-right: 25px;
+}
 .connexion #connexion-main .connexion-main-block,
 .connexion #connexion-main .contact-main-block,
 .connexion #contact-main .connexion-main-block,
@@ -736,7 +757,7 @@ a {
 }
 
 #footer-social {
-  padding-top: 300px;
+  padding-top: 400px;
   margin-bottom: 125px;
   display: flex;
   flex-wrap: wrap;

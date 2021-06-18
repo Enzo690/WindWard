@@ -7,19 +7,20 @@
         @auth
 
 
-        <div class="dropdown header-buttonflex" style="background-color: #043A5B;" id="header-register">
+        <div class="dropdown header-buttonflex header-register" style="background-color: #043A5B;">
             <a id="my-dropdown" href="section=mysection" class="dropdown-toggle" style=" color: white;" data-toggle="dropdown">{{ Auth::user()->pseudonyme }}</a>
         
             <ul class="dropdown-menu">
-                <form style="text-align: center;" method="POST" action="{{ route('logout') }}">
-                    @csrf
+                <li>
+                    <form style="text-align: center;" method="POST" action="{{ route('logout') }}">
+                        @csrf
 
-                    <a style="padding: 3%" class="text-danger" href="route('logout')"
-                            onclick="event.preventDefault();
+                        <a style="padding: 3%" class="text-danger" href="route('logout')" onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Déconnexion') }}
-                </a>
-                </form>
+                            {{ __('Déconnexion') }}
+                        </a>
+                    </form>
+                </li>
             </ul>
         
         </div>
@@ -34,7 +35,7 @@
         <a href="/login" id="header-login">
             Connexion
         </a>
-        <a href="/login" class="header-button" id="header-register">
+        <a href="/login" class="header-button header-register">
             Insription
         </a>
     @endif
@@ -48,11 +49,10 @@
             <span></span>
             <span></span>
         </div>
-        <h1 class="header-title">Contact</p>
-        </h1>
+        <h1 class="header-title">Contact</h1>
     </div>
     <div id="part" class="contact">
-        <img src="/images/stain-3.svg" alt="Stain">
+        <img src="/images/stain-3.svg" alt="">
         <div id="contact-main">
             <div class="contact-main-block">
                 <form action="{{ route('contact.store') }}" method="post">

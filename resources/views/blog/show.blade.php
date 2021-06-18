@@ -5,19 +5,20 @@
         @auth
 
 
-        <div class="dropdown header-buttonflex" style="background-color: #043A5B;" id="header-register">
+        <div class="dropdown header-buttonflex header-register" style="background-color: #043A5B;">
             <a id="my-dropdown" href="section=mysection" class="dropdown-toggle" style=" color: white;" data-toggle="dropdown">{{ Auth::user()->pseudonyme }}</a>
         
             <ul class="dropdown-menu">
-                <form style="text-align: center;" method="POST" action="{{ route('logout') }}">
-                    @csrf
+                <li>
+                    <form style="text-align: center;" method="POST" action="{{ route('logout') }}">
+                        @csrf
 
-                    <a style="padding: 3%" class="text-danger" href="route('logout')"
-                            onclick="event.preventDefault();
+                        <a style="padding: 3%" class="text-danger" href="route('logout')" onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Déconnexion') }}
-                </a>
-                </form>
+                            {{ __('Déconnexion') }}
+                        </a>
+                    </form>
+                </li>
             </ul>
         
         </div>
@@ -31,7 +32,7 @@
         <a href="/login" id="header-login">
             Connexion
         </a>
-        <a href="/login" class="header-button" id="header-register">
+        <a href="/login" class="header-button header-register">
             Insription
         </a>
     @endif
@@ -49,7 +50,7 @@
 
     <div id="part" class="article">
         <div class="d-flex justify-content-center col-lg-12">{!! $article->content !!}</div>
-        <img src="{{$article->image}}">
+        <img src="{{$article->image}}" alt="Image de l'article">
     </div>
 
 
