@@ -52,7 +52,7 @@
                 </form>
             </div>
             <div class="connexion-main-block">
-                <form method="POST" action="{{ route('register') }}">
+                <form method="POST" name="register" action="/register">
                     @csrf
                     <h2>Inscription</h2>
                     <div>
@@ -86,7 +86,9 @@
                         <input type="password" name="confirm" size="10" placeholder="Confirmer">
                         <label for="confirm"></label>
                     </div>
-                    <input type="submit" value="Envoyer">
+                    <x-button>
+                        {{ __('Register') }}
+                    </x-button>
                 </form>
             </div>
         </div>

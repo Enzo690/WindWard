@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*  
+/*
  route for guest or normal user
  get
 */
