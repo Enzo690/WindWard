@@ -24,3 +24,5 @@ DB_PASSWORD=
 ## Administration
 
 Pour se connecter à un compte Administrateur, récupérer l'email d'un compte avec les permissions administratives dans la BDD. Pour les mots de passe des comptes de tests sont : `password`. Puis se connecter avec dans la page : `/login`
+
+***Site disponible sur : https://windward.foxwind.fr/***
