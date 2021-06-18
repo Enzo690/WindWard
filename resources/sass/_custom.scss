@@ -379,10 +379,12 @@ a {
         margin-bottom: 25px;
         font-size: 15px;
         opacity: 1 !important;
+        font-family: 'Montserrat', sans-serif;
     }
     img {
         position: absolute;
         margin-top: -175px;
+        z-index: -1;
         right: -350px;
     }
     #connexion-main,
