@@ -54,7 +54,7 @@
             <a class="nav-item"  href="/admin"><i class="fa fa-cog" aria-hidden="true"></i></a>
             @endisAdmin
         @endauth
-        
+
 
     </nav>
     <!-- Navbar -->
@@ -83,8 +83,9 @@
 </header>
 
 <main>
-    <section class="content">
+    <div class="content">
         @yield('content')
+    </div>
     </section>
 
     <!-- Importation du JS -->

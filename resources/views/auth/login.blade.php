@@ -17,7 +17,19 @@
         </h1>
     </div>
     <div id="part" class="connexion">
-        <h3>Mot de passe invalide</h3>
+        <div id="error" style="z-index: 5; position: relative">
+            @if(session()->has('message'))
+                <h3>
+                    {{ session()->get('message') }}
+                </h3>
+            @endif
+
+            @if($errors->any())
+                    <h3>
+                    {{$errors->first()}}
+                    </h3>
+            @endif
+        </div>
         <img src="/images/stain-3.svg" alt="">
         <div id="connexion-main">
             <div class="connexion-main-block">
