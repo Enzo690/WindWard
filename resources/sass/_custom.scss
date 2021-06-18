@@ -372,6 +372,13 @@ a {
 
 .connexion,
 .contact {
+    h3 {
+        color: red;
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 15px;
+        opacity: 1 !important;
+    }
     img {
         position: absolute;
         margin-top: -175px;
@@ -390,10 +397,12 @@ a {
             align-items: center;
             label {
                 margin-bottom: 0 !important;
+                cursor: pointer;
             }
             input {
                 width: 15px;
                 margin-right: 25px;
+                cursor: pointer;
             }
         }
         .connexion-main-block,

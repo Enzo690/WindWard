@@ -17,6 +17,7 @@
         </h1>
     </div>
     <div id="part" class="connexion">
+        <h3>Mot de passe invalide</h3>
         <img src="/images/stain-3.svg" alt="">
         <div id="connexion-main">
             <div class="connexion-main-block">
@@ -86,9 +87,7 @@
                         <input type="password" name="confirm" size="10" placeholder="Confirmer">
                         <label for="confirm"></label>
                     </div>
-                    <x-button>
-                        {{ __('Register') }}
-                    </x-button>
+                    <input type="submit" value="Envoyer">
                 </form>
             </div>
         </div>
