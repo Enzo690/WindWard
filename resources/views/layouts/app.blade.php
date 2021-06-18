@@ -88,7 +88,7 @@
     </section>
 
     <!-- Importation du JS -->
-    <script type="text/javascript" src="/js/script.js"></script>
+    <script src="/js/script.js"></script>
 </main>
 
 <footer>
@@ -96,12 +96,12 @@
     <img src="{{ asset('images/footer/right.svg') }}" alt="" class="cloud">
     <div id="footer-inside">
         <h3>Copyright WindWard</h3>
-        <div id="footer-select">
+        {{-- <div id="footer-select">
             <select name="lang">
                 <option selected>Français</option>
                 <option value="1">Anglais</option>
             </select>
-        </div>
+        </div> --}}
     </div>
 </footer>
 </body>
