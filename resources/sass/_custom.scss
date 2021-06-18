@@ -45,7 +45,7 @@ a {
         margin-left: 0px;
         font-family: 'Montserrat', sans-serif;
         font-weight: bold;
-        font-size: 50px;
+        font-size: 45px;
         letter-spacing: 5px;
         margin-top: 25vh;
         margin-right: 10px;
@@ -160,7 +160,6 @@ a {
         margin-bottom: 300px;
     }
     #product-right {
-        width: 500px;
         position: absolute;
         right: 250px;
         margin-top: -1000px;
@@ -516,7 +515,6 @@ a {
     padding-top: 100vh;
     h2 {
         font-size: 35px;
-        letter-spacing: 5px;
         width: 90%;
         margin: auto;
     }
@@ -811,6 +809,16 @@ footer {
             margin: 0 auto;
             margin-top: 100px;
             margin-bottom: 300px;
+        }
+    }
+    .blog {
+        img {
+            display: none !important;
+        }
+    }
+    .connexion {
+        img {
+            display: none !important;
         }
     }
 }
